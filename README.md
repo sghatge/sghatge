@@ -19,6 +19,10 @@ I build practical systems at the intersection of enterprise CRM, marketing techn
 | [Governance OS](https://sghatge.github.io/adobe-campaign-v8-governance/) · [Streamlit app](https://adobe-campaign-v8-governance-3rzwjb2pbqqftpm3fecxzd.streamlit.app/) | Campaign QA, governance architecture, portfolio risk, human accountability and audit evidence |
 | [Digital Marketing AI Agents](https://sghatge-digital-marketing-ai-agents-app-5uhltb.streamlit.app/) · [Repository](https://github.com/sghatge/digital-marketing-ai-agents) | Interactive AI-agent concepts for digital marketing workflows |
 
+## Recruiter project showcase
+
+Explore the [dedicated engineering project showcase](https://sghatge.github.io/adobe-campaign-v8-governance/projects.html) for evidence-based case studies, repository links, live demos where available, documented technology and project limitations.
+
 ## Project portfolio
 
 ### 1. Enterprise CRM & MarTech
