@@ -21,7 +21,7 @@ I build practical systems at the intersection of enterprise CRM, marketing techn
 
 ## Recruiter project showcase
 
-Explore the [dedicated engineering project showcase](https://sghatge.github.io/adobe-campaign-v8-governance/projects.html) for evidence-based case studies, repository links, live demos where available, documented technology and project limitations.
+Explore the [dedicated engineering project showcase](https://sghatge.github.io/adobe-campaign-v8-governance/projects.html) for selected case studies, plus the separate [project index](https://sghatge.github.io/adobe-campaign-v8-governance/portfolio.html) and [Start Here architecture guide](https://sghatge.github.io/adobe-campaign-v8-governance/architecture-guide.html).
 
 ## Project portfolio
 
