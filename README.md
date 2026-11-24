@@ -69,7 +69,7 @@ Governed AI operating patterns with bounded agents, named human approvals and au
 
 A hands-on AEP learning lab covering XDM, identity resolution, consent, audience design and lifecycle integration using synthetic data.
 
-[Repository](https://github.com/sghatge/customer-360-intelligence)
+[Repository](https://github.com/sghatge/customer-360-intelligence) · [Live demo](https://sghatge.github.io/adobe-campaign-v8-governance/demos/customer-360.html)
 
 </td>
 </tr>
@@ -108,6 +108,8 @@ Independent learning streams for journey orchestration and CRM intelligence.
 | CRM Ops AI Skills | Reusable campaign QA, troubleshooting and reporting skills | [Repo](https://github.com/sghatge/crm-ops-ai-skills) · [Skill browser](https://sghatge.github.io/adobe-campaign-v8-governance/demos/crm-ops-skills.html) |
 | Email in 2030 | Future-facing email and journey concepts | [Repo](https://github.com/sghatge/email-2030-showcase) · [Demos](https://sghatge.github.io/adobe-campaign-v8-governance/demos/email-2030.html) |
 | Klaviyo Growth Intelligence | Growth and lifecycle intelligence concepts | [Repo](https://github.com/sghatge/klaviyo-growth-intelligence) |
+| PharmaPath | Digital product exploration | [Repo](https://github.com/sghatge/pharmapath) |
+| Fieldnotes | Focused tools and product experiments | [Repo](https://github.com/sghatge/fieldnotes) · [Live previews](https://sghatge.github.io/adobe-campaign-v8-governance/demos/fieldnotes/) |
 
 ### Safe to Send · 28-Episode Governance Engineering Series
 
