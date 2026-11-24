@@ -1,76 +1,120 @@
-# Sangram Ghatge
+<div align="center">
 
-**Enterprise MarTech · AI Transformation · Agentic AI · CRM Operations · AI Governance**
+<img src="assets/portfolio/hero.svg" width="100%" alt="Sangram Ghatge — Enterprise MarTech, Agentic AI and CRM Operations">
+
+**ENTERPRISE MARTECH · AI TRANSFORMATION · AGENTIC AI · CRM OPERATIONS · AI GOVERNANCE**
 
 [![GitHub](https://img.shields.io/badge/GitHub-sghatge-181717?logo=github)](https://github.com/sghatge)
 [![Governance OS](https://img.shields.io/badge/Live-Governance%20OS-2563eb)](https://sghatge.github.io/adobe-campaign-v8-governance/)
 [![Digital Marketing AI Agents](https://img.shields.io/badge/Live-Digital%20Marketing%20AI%20Agents-0f766e)](https://sghatge-digital-marketing-ai-agents-app-5uhltb.streamlit.app/)
 
-I build practical systems at the intersection of enterprise CRM, marketing technology, AI-enabled operations and responsible agentic automation. This profile brings together independent engineering projects, reusable skills, governance patterns, interactive prototypes and applied research.
+**Designing governed, evidence-first systems for enterprise customer and marketing operations.**
 
-I'm learning in public. Every project here is public on GitHub, and most have a demo you can open in your browser. Please explore them, reuse them, adapt them for your own team and make them better. Check the licence in each repo before you reuse anything. Feedback and pull requests are very welcome.
+[Explore live demos](https://sghatge.github.io/adobe-campaign-v8-governance/) · [Browse repositories](https://github.com/sghatge?tab=repositories) · [Project showcase](https://sghatge.github.io/adobe-campaign-v8-governance/projects.html)
 
-**Start here:** [every live demo on one page](https://sghatge.github.io/adobe-campaign-v8-governance/)
-
-> **Portfolio principle:** deterministic controls enforce policy; AI provides bounded assistance; humans retain accountability. Public demonstrations use synthetic or demonstration data unless a project explicitly documents otherwise. Never submit confidential, customer or production data to public demos.
+</div>
 
 ---
 
-## Live demos
+## About Me
 
-Everything below runs in your browser. Demos use synthetic data and nothing you type is sent anywhere.
+I build practical systems at the intersection of enterprise CRM, marketing technology, AI-enabled operations and responsible agentic automation. This portfolio brings together independent engineering projects, reusable skills, governance patterns, interactive prototypes and applied research.
 
-| Project | What it demonstrates | Try it |
+My focus is on turning complex operating processes into measurable, testable and explainable systems:
+
+- **Enterprise MarTech:** Adobe Campaign Classic, CRM architecture, lifecycle marketing and campaign operations.
+- **Customer experience:** customer data, identity resolution, journey orchestration and activation controls.
+- **Agentic AI:** task-specific agents, bounded tools, structured handoffs and human-in-the-loop workflows.
+- **AI governance:** policy-as-code, deterministic gates, evaluation, auditability and risk controls.
+- **Engineering practice:** Python, SQL, Streamlit, GitHub Actions, automated testing and documentation.
+
+> **Portfolio principle:** deterministic controls enforce policy; AI provides bounded assistance; humans retain accountability. Public demonstrations use synthetic or demonstration data. Never submit confidential, customer or production data to public demos.
+
+## Featured Projects
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 01 · Adobe Campaign v8 Governance
+
+Deterministic campaign QA, evidence reports, governance controls and human review.
+
+[Repository](https://github.com/sghatge/adobe-campaign-v8-governance) · [Live site](https://sghatge.github.io/adobe-campaign-v8-governance/) · [Streamlit app](https://adobe-campaign-v8-governance-3rzwjb2pbqqftpm3fecxzd.streamlit.app/)
+
+</td>
+<td width="50%" valign="top">
+
+### 02 · ACC Agent Gate
+
+A policy checkpoint between AI agents and Adobe Campaign, with approval gates and tamper-evident audit records.
+
+[Repository](https://github.com/sghatge/acc-agent-gate) · [Live demo](https://sghatge.github.io/acc-agent-gate/)
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 03 · OPSFORGE
+
+Governed AI operating patterns with bounded agents, named human approvals and auditable outcomes.
+
+[Repository](https://github.com/sghatge/opsforge) · [Walkthrough](https://sghatge.github.io/opsforge/)
+
+</td>
+<td width="50%" valign="top">
+
+### 04 · Customer 360 Intelligence
+
+A hands-on AEP learning lab covering XDM, identity resolution, consent, audience design and lifecycle integration using synthetic data.
+
+[Repository](https://github.com/sghatge/customer-360-intelligence) · [Streamlit lab](https://aep-customer-360-lab.streamlit.app/)
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 05 · Digital Marketing AI Agents
+
+Interactive marketing workflows for strategy, content, campaign QA and performance analysis.
+
+[Repository](https://github.com/sghatge/digital-marketing-ai-agents) · [Streamlit demo](https://sghatge-digital-marketing-ai-agents-app-5uhltb.streamlit.app/)
+
+</td>
+<td width="50%" valign="top">
+
+### 06 · AJO & Salesforce Labs
+
+Independent learning streams for journey orchestration and CRM intelligence.
+
+[AJO repository](https://github.com/sghatge/ajo-journey-orchestration-lab) · [Salesforce repository](https://github.com/sghatge/salesforce-crm-ai-lab)
+
+</td>
+</tr>
+</table>
+
+## More Projects
+
+| Project | What it explores | Links |
 |---|---|---|
-| **Governance OS** | Campaign QA with APPROVE or BLOCK, human review and a tamper-evident audit log | [Site](https://sghatge.github.io/adobe-campaign-v8-governance/) · [Streamlit app](https://adobe-campaign-v8-governance-3rzwjb2pbqqftpm3fecxzd.streamlit.app/) |
-| **ACC Agent Gate** | A policy gate between an AI agent and Adobe Campaign | [Live demo](https://sghatge.github.io/acc-agent-gate/) |
-| **Campaign v8 Pre-flight Agent** | Eight rule-based checks before a send | [Live demo](https://sghatge.github.io/campaign-v8-preflight-agent/) |
-| **Safe to Send** | 28-episode series on governing AI in CRM operations. Eight tools run live | [Tools 1 to 4](https://sghatge.github.io/adobe-campaign-v8-governance/demos/safe-to-send.html) · [Tools 5 to 8](https://sghatge.github.io/adobe-campaign-v8-governance/demos/safe-to-send-more.html) |
-| **Email in 2030** | Brief to journey spec, AI-inbox readability and an honest test loop | [Live demos](https://sghatge.github.io/adobe-campaign-v8-governance/demos/email-2030.html) |
-| **CRM AI Agent Platform** | Eight evidence-first CRM agents | [Live workbench](https://sghatge.github.io/adobe-campaign-v8-governance/demos/crm-agent-platform.html) |
-| **CRM Ops AI Skills** | Ten reusable, evidence-first CRM skills | [Skill browser](https://sghatge.github.io/adobe-campaign-v8-governance/demos/crm-ops-skills.html) |
-| **Customer 360 Intelligence** | Identity resolution across four systems with a consent roll-up | [Live demo](https://sghatge.github.io/adobe-campaign-v8-governance/demos/customer-360.html) |
-| **Fieldnotes** | Privacy-first small-business tools, early previews | [Live previews](https://sghatge.github.io/adobe-campaign-v8-governance/demos/fieldnotes/) |
-| **Handoff Gate** | GO, HOLD or BLOCK checkpoint for agent handoffs | [Live demo](https://sghatge.github.io/handoff-gate/demo/) |
-| **OPSFORGE** | Governed AI agents with human approval gates | [Walkthrough](https://sghatge.github.io/opsforge/) |
-| **AI Readiness Calculator** | Readiness scoring, team workshop and action planning | [Live site](https://sghatge.github.io/ai-readiness-calculator/) |
-| **Campaign Frameworks Atlas** | Ten Adobe Campaign v8 solution patterns | [Live atlas](https://sghatge.github.io/campaign-frameworks-atlas/) |
-| **Aegis Studio** | Local-first campaign analytics and operations | [Live demo](https://sghatge.github.io/aegis-studio/) |
-| **Digital Marketing AI Agents** | Interactive AI-agent concepts for marketing workflows | [Streamlit demo](https://sghatge-digital-marketing-ai-agents-app-5uhltb.streamlit.app/) |
+| Campaign v8 Pre-flight Agent | Eight deterministic readiness checks and auditable verdicts | [Repo](https://github.com/sghatge/campaign-v8-preflight-agent) · [Demo](https://sghatge.github.io/campaign-v8-preflight-agent/) |
+| Handoff Gate | GO / HOLD / BLOCK checkpoints for agent handoffs | [Repo](https://github.com/sghatge/handoff-gate) · [Demo](https://sghatge.github.io/handoff-gate/demo/) |
+| AI Readiness Calculator | Readiness scoring, workshop and action planning | [Repo](https://github.com/sghatge/ai-readiness-calculator) · [Site](https://sghatge.github.io/ai-readiness-calculator/) |
+| Campaign Frameworks Atlas | Adobe Campaign v8 solution patterns | [Repo](https://github.com/sghatge/campaign-frameworks-atlas) · [Atlas](https://sghatge.github.io/campaign-frameworks-atlas/) |
+| Aegis Studio | Local-first campaign analytics and operations | [Repo](https://github.com/sghatge/aegis-studio) · [Demo](https://sghatge.github.io/aegis-studio/) |
+| CRM AI Agent Platform | Evidence-first CRM operations workflows | [Repo](https://github.com/sghatge/crm-ai-agent-platform) · [Workbench](https://sghatge.github.io/adobe-campaign-v8-governance/demos/crm-agent-platform.html) |
+| CRM Ops AI Skills | Reusable campaign QA, troubleshooting and reporting skills | [Repo](https://github.com/sghatge/crm-ops-ai-skills) · [Skill browser](https://sghatge.github.io/adobe-campaign-v8-governance/demos/crm-ops-skills.html) |
+| Email in 2030 | Future-facing email and journey concepts | [Repo](https://github.com/sghatge/email-2030-showcase) · [Demos](https://sghatge.github.io/adobe-campaign-v8-governance/demos/email-2030.html) |
+| Klaviyo Growth Intelligence | Growth and lifecycle intelligence concepts | [Repo](https://github.com/sghatge/klaviyo-growth-intelligence) |
 
-## Project showcase
+### Safe to Send · 28-Episode Governance Engineering Series
 
-Explore the [dedicated engineering project showcase](https://sghatge.github.io/adobe-campaign-v8-governance/projects.html) for selected case studies, plus the separate [project index](https://sghatge.github.io/adobe-campaign-v8-governance/portfolio.html) and [Start Here architecture guide](https://sghatge.github.io/adobe-campaign-v8-governance/architecture-guide.html).
-
-## Project portfolio
-
-### 1. Enterprise CRM & MarTech
-
-| Project | Focus | Links |
-|---|---|---|
-| **CRM Ops AI Skills** | Evidence-first skills for campaign QA, troubleshooting, reporting, postmortems and capacity planning | [Repository](https://github.com/sghatge/crm-ops-ai-skills) · [Skill browser](https://sghatge.github.io/adobe-campaign-v8-governance/demos/crm-ops-skills.html) · [Showcase](https://github.com/sghatge/crm-ops-ai-skills/blob/main/docs/SHOWCASE.md) |
-| **CRM AI Agent Platform** | Reusable AI-assisted CRM operations workflows | [Repository](https://github.com/sghatge/crm-ai-agent-platform) · [Live workbench](https://sghatge.github.io/adobe-campaign-v8-governance/demos/crm-agent-platform.html) |
-| **Campaign Frameworks Atlas** | Campaign planning and operational frameworks | [Repository](https://github.com/sghatge/campaign-frameworks-atlas) · [Live atlas](https://sghatge.github.io/campaign-frameworks-atlas/) |
-| **Adobe Campaign v8 Governance** | Deterministic pre-flight QA and governance engineering | [Repository](https://github.com/sghatge/adobe-campaign-v8-governance) · [Live site](https://sghatge.github.io/adobe-campaign-v8-governance/) · [Live app](https://adobe-campaign-v8-governance-3rzwjb2pbqqftpm3fecxzd.streamlit.app/) |
-| **Campaign v8 Pre-flight Agent** | Campaign pre-flight assessment prototype | [Repository](https://github.com/sghatge/campaign-v8-preflight-agent) · [Live demo](https://sghatge.github.io/campaign-v8-preflight-agent/) |
-| **ACC Agent Gate** | Policy checkpoint concept for agent-assisted campaign operations | [Repository](https://github.com/sghatge/acc-agent-gate) · [Live demo](https://sghatge.github.io/acc-agent-gate/) |
-| **Aegis Studio** | Exploration of governed AI and operational workflows | [Repository](https://github.com/sghatge/aegis-studio) · [Live demo](https://sghatge.github.io/aegis-studio/) |
-
-### 2. AI Transformation & Agentic Governance
-
-| Project | Focus | Links |
-|---|---|---|
-| **OPSFORGE** | Governed AI operating model and reusable operational patterns | [Repository](https://github.com/sghatge/opsforge) · [Walkthrough](https://sghatge.github.io/opsforge/) |
-| **AI Readiness Calculator** | AI adoption assessment, readiness scoring and action planning | [Repository](https://github.com/sghatge/ai-readiness-calculator) · [Live site](https://sghatge.github.io/ai-readiness-calculator/) |
-| **Handoff Gate** | Deterministic GO / HOLD / BLOCK checkpoint with evidence and audit fingerprint | [Repository](https://github.com/sghatge/handoff-gate) · [Live demo](https://sghatge.github.io/handoff-gate/demo/) |
-| **Digital Marketing AI Agents** | Interactive marketing AI workflow prototype | [Repository](https://github.com/sghatge/digital-marketing-ai-agents) · [Live demo](https://sghatge-digital-marketing-ai-agents-app-5uhltb.streamlit.app/) |
-
-### 3. Safe to Send — 28-Day AI Governance Engineering Series
-
-A practical engineering series covering agent security, deterministic controls, evaluation, operational intelligence, AI readiness and business value. Eight of the tools run live in your browser: [tools 1 to 4](https://sghatge.github.io/adobe-campaign-v8-governance/demos/safe-to-send.html) and [tools 5 to 8](https://sghatge.github.io/adobe-campaign-v8-governance/demos/safe-to-send-more.html).
+A practical series covering agent security, deterministic controls, evaluation, operational intelligence, AI readiness and business value. Explore the [first live tools](https://sghatge.github.io/adobe-campaign-v8-governance/demos/safe-to-send.html) and [additional live tools](https://sghatge.github.io/adobe-campaign-v8-governance/demos/safe-to-send-more.html).
 
 <details>
-<summary><strong>Episodes 01–07 · Agent Security Foundations</strong></summary>
+<summary><strong>Browse all 28 episodes</strong></summary>
 
 1. [Agent Blast Radius](https://github.com/sghatge/safe-to-send-01-agent-blast-radius)
 2. [Five Decisions](https://github.com/sghatge/safe-to-send-02-five-decisions)
@@ -79,12 +123,6 @@ A practical engineering series covering agent security, deterministic controls, 
 5. [Pre-send QA](https://github.com/sghatge/safe-to-send-05-presend-qa)
 6. [Audit Chain](https://github.com/sghatge/safe-to-send-06-audit-chain)
 7. [Red Team Your Guardrail](https://github.com/sghatge/safe-to-send-07-red-team-your-guardrail)
-
-</details>
-
-<details>
-<summary><strong>Episodes 08–14 · Intelligent Governance</strong></summary>
-
 8. [Rule, Model or Human](https://github.com/sghatge/safe-to-send-08-rule-model-or-human)
 9. [Golden Tests](https://github.com/sghatge/safe-to-send-09-golden-tests)
 10. [Synthetic Market](https://github.com/sghatge/safe-to-send-10-synthetic-market)
@@ -92,12 +130,6 @@ A practical engineering series covering agent security, deterministic controls, 
 12. [Verdict Lock](https://github.com/sghatge/safe-to-send-12-verdict-lock)
 13. [Approval Inbox](https://github.com/sghatge/safe-to-send-13-approval-inbox)
 14. [Blameless Postmortem](https://github.com/sghatge/safe-to-send-14-blameless-postmortem)
-
-</details>
-
-<details>
-<summary><strong>Episodes 15–21 · Operational Intelligence</strong></summary>
-
 15. [Playbook Linter](https://github.com/sghatge/safe-to-send-15-playbook-linter)
 16. [Policy Invariants CI](https://github.com/sghatge/safe-to-send-16-policy-invariants-ci)
 17. [Workflow X-Ray](https://github.com/sghatge/safe-to-send-17-workflow-xray)
@@ -105,12 +137,6 @@ A practical engineering series covering agent security, deterministic controls, 
 19. [Local-First Insights](https://github.com/sghatge/safe-to-send-19-local-first-insights)
 20. [Fresh Search](https://github.com/sghatge/safe-to-send-20-fresh-search)
 21. [Series Map](https://github.com/sghatge/safe-to-send-21-series-map)
-
-</details>
-
-<details>
-<summary><strong>Episodes 22–28 · AI Readiness & Business Value</strong></summary>
-
 22. [Readiness Score](https://github.com/sghatge/safe-to-send-22-readiness-score)
 23. [What-if Simulator](https://github.com/sghatge/safe-to-send-23-what-if-simulator)
 24. [Team Roadmap](https://github.com/sghatge/safe-to-send-24-team-roadmap)
@@ -121,30 +147,31 @@ A practical engineering series covering agent security, deterministic controls, 
 
 </details>
 
-### 4. Digital Products & Innovation
+## Tech Stack
 
-| Project | Focus | Links |
-|---|---|---|
-| **PharmaPath** | Digital product exploration | [Repository](https://github.com/sghatge/pharmapath) |
-| **Fieldnotes** | Focused tools and product experiments | [Repository](https://github.com/sghatge/fieldnotes) · [Live previews](https://sghatge.github.io/adobe-campaign-v8-governance/demos/fieldnotes/) |
-| **Email in 2030** | Future-facing email and CRM experience concepts | [Repository](https://github.com/sghatge/email-2030-showcase) · [Live demos](https://sghatge.github.io/adobe-campaign-v8-governance/demos/email-2030.html) |
-| **Customer 360 Intelligence** | Customer intelligence exploration | [Repository](https://github.com/sghatge/customer-360-intelligence) · [Live demo](https://sghatge.github.io/adobe-campaign-v8-governance/demos/customer-360.html) |
+| Area | Tools and practices |
+|---|---|
+| CRM & MarTech | Adobe Campaign Classic, Salesforce, lifecycle marketing |
+| Customer data | AEP concepts, XDM, identity resolution, consent and audience design |
+| AI & automation | Agentic workflows, LLM adapters, policy-as-code, human approval |
+| Data & analytics | Python, SQL, Qlik, campaign measurement |
+| Apps & delivery | Streamlit, GitHub Pages, GitHub Actions |
+| Quality & governance | Deterministic tests, evidence reports, audit trails, synthetic data |
 
----
-
-## Engineering themes
-
-- **Enterprise MarTech:** Adobe Campaign Classic, campaign operations, CRM architecture, segmentation, lifecycle orchestration and platform governance.
-- **Agentic AI:** task-specific agents, tool boundaries, structured outputs, handoffs and human-in-the-loop controls.
-- **AI governance:** policy-as-code, deterministic decision gates, evaluation, auditability, privacy and risk controls.
-- **Engineering practice:** SQL, Streamlit, GitHub Actions, automated tests, documentation and synthetic test data.
-
-## Connect
+## Connect & Explore
 
 - **GitHub:** [github.com/sghatge](https://github.com/sghatge)
-- **Public repositories:** [Browse all projects](https://github.com/sghatge?tab=repositories)
-- **Portfolio website:** [Governance OS — Engineering Portfolio](https://sghatge.github.io/adobe-campaign-v8-governance/)
+- **All repositories:** [Browse projects](https://github.com/sghatge?tab=repositories)
+- **Engineering portfolio:** [Governance OS](https://sghatge.github.io/adobe-campaign-v8-governance/)
+- **Project case studies:** [Project showcase](https://sghatge.github.io/adobe-campaign-v8-governance/projects.html)
+- **Architecture guide:** [Start here](https://sghatge.github.io/adobe-campaign-v8-governance/architecture-guide.html)
 
 ---
 
-*Independent engineering portfolio. Projects vary in maturity and scope; consult each repository's README for implementation details, prerequisites, limitations and current status.*
+<div align="center">
+
+**BUILD SYSTEMS THAT KEEP HUMANS IN CONTROL**
+
+*Independent engineering portfolio. Project maturity and capabilities vary; consult each repository for its implementation details, prerequisites, limitations and licence.*
+
+</div>
