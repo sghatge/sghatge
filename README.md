@@ -69,7 +69,7 @@ Governed AI operating patterns with bounded agents, named human approvals and au
 
 A hands-on AEP learning lab covering XDM, identity resolution, consent, audience design and lifecycle integration using synthetic data.
 
-[Repository](https://github.com/sghatge/customer-360-intelligence) · [Streamlit lab](https://aep-customer-360-lab.streamlit.app/)
+[Repository](https://github.com/sghatge/customer-360-intelligence)
 
 </td>
 </tr>
