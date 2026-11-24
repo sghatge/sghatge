@@ -177,3 +177,15 @@ A practical series covering agent security, deterministic controls, evaluation, 
 *Independent engineering portfolio. Project maturity and capabilities vary; consult each repository for its implementation details, prerequisites, limitations and licence.*
 
 </div>
+
+
+## Latest Build · CampaignPulse AI
+
+**CampaignPulse AI — Adobe Campaign Edition** is a standalone campaign intelligence agent for practitioners. It turns aggregate email metrics into deterministic KPIs, evidence-labelled diagnostics, and prioritized Adobe Campaign operational checks. It does not connect to an Adobe Campaign instance.
+
+- [Source repository](https://github.com/sghatge/digital-marketing-ai-agents)
+- [V1 specification](https://github.com/sghatge/digital-marketing-ai-agents/blob/main/README_CAMPAIGNPULSE.md)
+- [ModletHub creator playbook](https://github.com/sghatge/digital-marketing-ai-agents/blob/main/modlethub/CAMPAIGNPULSE_AI_PLAYBOOK.md)
+- [Open the Streamlit AI Lab](https://sghatge-digital-marketing-ai-agents-app-5uhltb.streamlit.app/)
+
+The live AI Lab uses synthetic or sanitized aggregate data. CampaignPulse V1 includes manual input, CSV analysis, campaign health diagnosis, practitioner/management reporting, and downloadable Markdown/JSON outputs.
