@@ -20,8 +20,8 @@ h1,h2,h3 { letter-spacing:-.035em; }
 .card p { color:#d2deee; line-height:1.55; }
 .tag { display:inline-block; padding:.2rem .55rem; border-radius:999px; background:#173b52; color:#83e1f5; font-size:.72rem; font-weight:700; margin-bottom:.6rem; }
 .small { color:#9eafc7; font-size:.84rem; }
-.project-visual { display:none !important; }
-.project-card { border:1px solid #294765; border-radius:18px; padding:1.05rem 1.1rem 1rem; background:linear-gradient(145deg,rgba(18,35,58,.98),rgba(8,17,31,.98)); min-height:245px; box-shadow:0 12px 28px rgba(0,0,0,.2); position:relative; overflow:hidden; }
+.project-visual { overflow:hidden; border-radius:14px; margin:0 0 .7rem; border:1px solid #294765; background:#071326; }
+.project-card { border:1px solid #294765; border-radius:18px; padding:1.05rem 1.1rem 1rem; background:linear-gradient(145deg,rgba(18,35,58,.98),rgba(8,17,31,.98)); box-shadow:0 12px 28px rgba(0,0,0,.2); position:relative; overflow:hidden; }
 .project-card:before { content:""; position:absolute; width:150px; height:150px; right:-65px; top:-75px; border-radius:50%; background:var(--glow); filter:blur(36px); opacity:.18; pointer-events:none; }
 .project-card-head { display:flex; align-items:center; gap:.75rem; margin-bottom:.8rem; position:relative; }
 .project-icon { width:48px; height:48px; min-width:48px; display:grid; place-items:center; border-radius:14px; font-size:1.45rem; background:var(--icon-bg); border:1px solid var(--icon-border); box-shadow:inset 0 0 18px rgba(255,255,255,.035); }
@@ -30,7 +30,7 @@ h1,h2,h3 { letter-spacing:-.035em; }
 .project-card p { color:#d0dced; line-height:1.48; font-size:.91rem; margin:.55rem 0; position:relative; }
 .project-proof { color:#b9cce1 !important; border-left:2px solid var(--accent); padding-left:.65rem; }
 .project-punch { color:#85e6f8 !important; font-weight:700; font-size:.88rem !important; }
-.project-links { display:flex; gap:1rem; margin:.55rem 0 1.2rem; font-size:.83rem; font-weight:750; }
+.project-links { display:flex; gap:1rem; margin:.8rem 0 0; font-size:.83rem; font-weight:750; }
 .project-links a { text-decoration:none; border-bottom:1px solid rgba(124,221,244,.35); padding-bottom:2px; }
 .concept-card { border:1px solid #31516f; border-radius:16px; padding:.85rem; background:linear-gradient(145deg,rgba(22,43,70,.98),rgba(8,17,31,.98)); min-height:100%; box-shadow:0 9px 22px rgba(0,0,0,.18); }
 .concept-title { color:#ffffff; font-size:1.22rem; font-weight:850; margin:.35rem 0 .65rem; letter-spacing:-.02em; }
@@ -52,6 +52,7 @@ div[data-testid="stSelectbox"] label, div[data-testid="stTextInput"] label { col
 """, unsafe_allow_html=True)
 
 
+@st.cache_data(show_spinner=False)
 def image_html(filename, alt="OPSFORGE AI concept artwork"):
     """Use a distinct repository-owned illustration for each concept."""
     asset_path = Path(__file__).parent / "assets" / filename
@@ -113,8 +114,10 @@ with projects_tab:
     c1.metric("Showcased builds",len(PROJECTS))
     c2.metric("Research connections",len(RESEARCH))
     c3.metric("Product families",len(set(p["family"] for p in PROJECTS)))
-    family=st.selectbox("Filter by product family",["All"]+sorted(set(p["family"] for p in PROJECTS)))
-    query=st.text_input("Search builds",placeholder="Try governance, journey, campaign, readiness…")
+    with st.form("portfolio_filter_form"):
+        family=st.selectbox("Filter by product family",["All"]+sorted(set(p["family"] for p in PROJECTS)))
+        query=st.text_input("Search builds",placeholder="Try governance, journey, campaign, readiness…")
+        apply_filters=st.form_submit_button("Apply filters")
     visible=[p for p in PROJECTS if (family=="All" or p["family"]==family) and (query.lower() in (p["name"]+" "+p["problem"]+" "+p["proof"]).lower())]
     PROJECT_ICON_STYLE = {
         "OPSFORGE": ("⚙️","#53d9f4"),
@@ -144,9 +147,9 @@ with projects_tab:
                   <p>{p["problem"]}</p>
                   <p class="project-proof"><b>What you can inspect</b><br>{p["proof"]}</p>
                   <p class="project-punch">“{p["punch"]}”</p>
+                  <div class="project-links"><a href="{p["repo"]}" target="_blank" rel="noopener noreferrer">↗ Repository</a><a href="{p["demo"]}" target="_blank" rel="noopener noreferrer">↗ Live demo / project</a></div>
                 </div>'''
                 st.markdown(card_html,unsafe_allow_html=True)
-                st.markdown(f'<div class="project-links"><a href="{p["repo"]}" target="_blank">↗ Repository</a><a href="{p["demo"]}" target="_blank">↗ Live demo / project</a></div>',unsafe_allow_html=True)
     st.caption("Portfolio inventory is curated from public repositories. A repository link is not a claim that every concept has a hosted interactive demo.")
 
 
@@ -174,25 +177,28 @@ with research_tab:
             st.markdown(f'**Related build:** {r["build"]}')
             st.markdown(f'**Audience question:** {r["question"]}')
             st.link_button("Read original source",r["url"])
-    st.caption("Research snapshot curated 26 November 2026. Check original publications for updates, methods and limitations.")
+    st.caption(f"Research snapshot curated {date.today().strftime('%d %B %Y')}. Check original publications for updates, methods and limitations.")
 
 with evaluate_tab:
     st.markdown("### Prototype-to-production evaluation")
     st.write("Score a concept using a transparent, editable rubric. This is a discussion aid—not a certification or production approval.")
-    concept=st.selectbox("Concept to evaluate",[p["name"] for p in PROJECTS])
-    st.caption("Rate each dimension from 1 (weak / unproven) to 5 (strong evidence).")
     dims=["Business value clarity","Functional completeness","Reliability and repeatability","Governance and security","Observability and auditability","User experience","Deployment readiness","Evidence quality"]
-    scores={}
-    for i,d in enumerate(dims):
-        scores[d]=st.slider(d,1,5,3,key=f"score_{i}")
-    total=round(sum(scores.values())/ (len(scores)*5)*100)
-    st.metric("Evidence maturity score",f"{total}/100")
-    st.progress(total/100)
-    if total>=80: st.success("Strong prototype evidence. Validate with representative users and operational controls before production claims.")
-    elif total>=60: st.warning("Promising. Close the evidence gaps and repeat the evaluation.")
-    else: st.error("Early-stage. Prioritise core functionality, test coverage and clear safety boundaries.")
-    st.dataframe([{"Dimension":k,"Score":v,"Max":5} for k,v in scores.items()],use_container_width=True,hide_index=True)
-    st.download_button("Download evaluation as CSV","Dimension,Score,Max\n"+"\n".join(f"{k},{v},5" for k,v in scores.items())+f"\nOverall,{total},100",file_name="opsforge_concept_evaluation.csv",mime="text/csv")
+    with st.form("evaluation_form"):
+        concept=st.selectbox("Concept to evaluate",[p["name"] for p in PROJECTS])
+        st.caption("Rate each dimension from 1 (weak / unproven) to 5 (strong evidence).")
+        scores={}
+        for i,d in enumerate(dims):
+            scores[d]=st.slider(d,1,5,3,key=f"score_{i}")
+        submitted=st.form_submit_button("Calculate evidence score")
+    if submitted:
+        total=round(sum(scores.values())/(len(scores)*5)*100)
+        st.metric("Evidence maturity score",f"{total}/100")
+        st.progress(total/100)
+        if total>=80: st.success("Strong prototype evidence. Validate with representative users and operational controls before production claims.")
+        elif total>=60: st.warning("Promising. Close the evidence gaps and repeat the evaluation.")
+        else: st.error("Early-stage. Prioritise core functionality, test coverage and clear safety boundaries.")
+        st.dataframe([{"Dimension":k,"Score":v,"Max":5} for k,v in scores.items()],width="stretch",hide_index=True)
+        st.download_button("Download evaluation as CSV","Dimension,Score,Max\n"+"\n".join(f"{k},{v},5" for k,v in scores.items())+f"\nOverall,{total},100",file_name="opsforge_concept_evaluation.csv",mime="text/csv")
     st.caption("Scores are user-entered and not independently verified. Do not interpret this score as a security certification or readiness guarantee.")
 
 with publish_tab:
