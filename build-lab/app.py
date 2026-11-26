@@ -284,9 +284,10 @@ Demo / project: {p["demo"]}
 What would you test before trusting this in a real enterprise workflow?
 
 #EnterpriseAI #AgenticAI #MarTech #CRM #AIGovernance #BuildInPublic"""
-    if not st.session_state.get("linkedin_draft") or st.session_state.get("pub_draft_project") != selected:
+    draft_signature=(selected,audience,angle,punchline)
+    if st.session_state.get("pub_draft_signature") != draft_signature:
         st.session_state["linkedin_draft"] = draft
-        st.session_state["pub_draft_project"] = selected
+        st.session_state["pub_draft_signature"] = draft_signature
     edited_draft=st.text_area("Editable LinkedIn draft",key="linkedin_draft",height=380)
     slug=re.sub(r"[^a-z0-9]+","-",selected.lower()).strip("-")
     st.download_button("Download LinkedIn draft",edited_draft,file_name=f"linkedin-{slug}.txt",mime="text/plain")
