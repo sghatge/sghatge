@@ -20,8 +20,8 @@ h1,h2,h3 { letter-spacing:-.035em; }
 .card p { color:#d2deee; line-height:1.55; }
 .tag { display:inline-block; padding:.2rem .55rem; border-radius:999px; background:#173b52; color:#83e1f5; font-size:.72rem; font-weight:700; margin-bottom:.6rem; }
 .small { color:#9eafc7; font-size:.84rem; }
-.project-visual { overflow:hidden; border-radius:12px; margin:0 auto .55rem; max-width:340px; background:#071326; border:1px solid #294765; box-shadow:0 8px 20px rgba(0,0,0,.24); }
-.project-visual img { width:100%; height:112px; object-fit:cover; display:block; transition:transform .25s ease; }
+.project-visual { overflow:hidden; border-radius:12px; margin:0 auto .55rem; max-width:300px; background:#071326; border:1px solid #294765; box-shadow:0 8px 20px rgba(0,0,0,.24); }
+.project-visual img { width:100%; height:78px; object-fit:cover; display:block; transition:transform .25s ease; }
 .project-visual:hover img { transform:scale(1.02); }
 .concept-card { border:1px solid #31516f; border-radius:16px; padding:.85rem; background:linear-gradient(145deg,rgba(22,43,70,.98),rgba(8,17,31,.98)); min-height:100%; box-shadow:0 9px 22px rgba(0,0,0,.18); }
 .concept-title { color:#ffffff; font-size:1.22rem; font-weight:850; margin:.35rem 0 .65rem; letter-spacing:-.02em; }
@@ -62,7 +62,7 @@ PROJECTS = [
  {"name":"Digital Marketing AI Agents","image":"four-agents-one-campaign.svg","family":"Autonomous engineering","stage":"Live Streamlit","problem":"Marketing workflows can be decomposed into bounded, reviewable agent tasks.","proof":"Interactive strategy, content, campaign QA and performance-analysis workflows.","repo":"https://github.com/sghatge/digital-marketing-ai-agents","demo":"https://sghatge-digital-marketing-ai-agents-app-5uhltb.streamlit.app/","punch":"Don't add AI to the workflow. Redesign the workflow around outcomes."},
  {"name":"Campaign v8 Pre-flight Agent","image":"preflight-agent.svg","family":"Governance","stage":"Prototype","problem":"Campaign release readiness should be checked before deployment windows.","proof":"Deterministic pre-flight controls and explainable verdicts.","repo":"https://github.com/sghatge/campaign-v8-preflight-agent","demo":"https://github.com/sghatge/campaign-v8-preflight-agent","punch":"The safest campaign is the one that fails fast before send time."},
  {"name":"AJO Journey Orchestration Lab","image":"prompt-to-journey.svg","family":"Journey intelligence","stage":"Learning lab","problem":"Teams need a practical environment to reason about orchestration patterns.","proof":"Independent AJO-oriented journey learning and design exercises.","repo":"https://github.com/sghatge/ajo-journey-orchestration-lab","demo":"https://github.com/sghatge/ajo-journey-orchestration-lab","punch":"Orchestration is not a canvas. It is a set of operational decisions."},
- {"name":"Salesforce CRM AI Lab","image":"deterministic-crm-qa.svg","family":"Transformation","stage":"Learning lab","problem":"CRM intelligence needs structured lifecycle and decision-support patterns.","proof":"Independent CRM AI learning stream.","repo":"https://github.com/sghatge/salesforce-crm-ai-lab","demo":"https://github.com/sghatge/salesforce-crm-ai-lab","punch":"Customer intelligence becomes valuable when it changes the next action."}
+ {"name":"Salesforce CRM AI Lab","image":"salesforce-crm-lifecycle.svg","family":"Transformation","stage":"Learning lab","problem":"CRM intelligence needs structured lifecycle and decision-support patterns.","proof":"Independent CRM AI learning stream.","repo":"https://github.com/sghatge/salesforce-crm-ai-lab","demo":"https://github.com/sghatge/salesforce-crm-ai-lab","punch":"Customer intelligence becomes valuable when it changes the next action."}
 ]
 
 
