@@ -160,6 +160,15 @@ A practical series covering agent security, deterministic controls, evaluation, 
 | Apps & delivery | Streamlit, GitHub Pages, GitHub Actions |
 | Quality & governance | Deterministic tests, evidence reports, audit trails, synthetic data |
 
+## OPSFORGE AI Build Lab
+
+**Build it. Test it. Govern it.** Explore an interactive portfolio hub connecting independent AI and MarTech prototypes to enterprise use cases, recent research, evaluation criteria and LinkedIn-ready build stories.
+
+- [Open the Build Lab source](https://github.com/sghatge/sghatge/tree/main/build-lab)
+- [Launch on Streamlit Community Cloud](https://share.streamlit.io/)
+
+The app includes a searchable project catalogue, research-to-build radar, transparent prototype evaluation rubric and LinkedIn publishing studio. To deploy, select this repository, branch `main`, and main file path `build-lab/app.py` in Streamlit Community Cloud.
+
 ## Connect & Explore
 
 - **GitHub:** [github.com/sghatge](https://github.com/sghatge)
