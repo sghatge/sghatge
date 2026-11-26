@@ -107,9 +107,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-projects_tab, concepts_tab, research_tab, evaluate_tab, publish_tab = st.tabs(["🚀 Build portfolio","✨ Concept gallery","🧠 Research radar","🧪 Evaluate a concept","📣 LinkedIn studio"])
-
-with projects_tab:
+def render_portfolio():
     c1,c2,c3=st.columns(3)
     c1.metric("Showcased builds",len(PROJECTS))
     c2.metric("Research connections",len(RESEARCH))
@@ -153,7 +151,7 @@ with projects_tab:
     st.caption("Portfolio inventory is curated from public repositories. A repository link is not a claim that every concept has a hosted interactive demo.")
 
 
-with concepts_tab:
+def render_concepts():
     st.markdown("### The 12-concept visual showcase")
     st.write("Each concept has its own original OPSFORGE artwork, a clear enterprise problem, a memorable point of view and a direct path to its repository or demonstration.")
     family_filter = st.selectbox("Filter concepts", ["All"] + sorted({x["family"] for x in CONCEPTS}), key="concept_family")
@@ -167,7 +165,8 @@ with concepts_tab:
                 st.markdown(f'[Source ↗]({item["repo"]})　 ·　 [Demo ↗]({item["demo"]})')
     st.caption("Artwork is original, concept-specific vector illustration. Project maturity and demo availability are stated per repository; visual polish does not imply production readiness.")
 
-with research_tab:
+
+def render_research():
     st.markdown("### Research-to-build connections")
     st.info("A research headline is useful only when it changes a design decision. Each item below links a published source to a build and a question worth testing.")
     for r in RESEARCH:
@@ -179,7 +178,8 @@ with research_tab:
             st.link_button("Read original source",r["url"])
     st.caption(f"Research snapshot curated {date.today().strftime('%d %B %Y')}. Check original publications for updates, methods and limitations.")
 
-with evaluate_tab:
+
+def render_evaluate():
     st.markdown("### Prototype-to-production evaluation")
     st.write("Score a concept using a transparent, editable rubric. This is a discussion aid—not a certification or production approval.")
     dims=["Business value clarity","Functional completeness","Reliability and repeatability","Governance and security","Observability and auditability","User experience","Deployment readiness","Evidence quality"]
@@ -201,7 +201,8 @@ with evaluate_tab:
         st.download_button("Download evaluation as CSV","Dimension,Score,Max\n"+"\n".join(f"{k},{v},5" for k,v in scores.items())+f"\nOverall,{total},100",file_name="opsforge_concept_evaluation.csv",mime="text/csv")
     st.caption("Scores are user-entered and not independently verified. Do not interpret this score as a security certification or readiness guarantee.")
 
-with publish_tab:
+
+def render_linkedin_studio():
     st.markdown("### Turn a build into a research-backed LinkedIn post")
     selected=st.selectbox("Choose a build",[p["name"] for p in PROJECTS],key="publish_project")
     p=next(x for x in PROJECTS if x["name"]==selected)
@@ -233,6 +234,20 @@ What would you test before trusting this in a real enterprise workflow?
     st.text_area("Editable LinkedIn draft",draft,height=360)
     st.download_button("Download LinkedIn draft",draft,file_name="linkedin_build_post.txt",mime="text/plain")
     st.caption("Edit the draft to reflect what you personally tested. Add screenshots or a short demo recording before publishing.")
+
+
+PAGES = [
+    st.Page(render_portfolio, title="Build portfolio", icon="🚀", default=True),
+    st.Page(render_concepts, title="Concept gallery", icon="✨"),
+    st.Page(render_research, title="Research radar", icon="🧠"),
+    st.Page(render_evaluate, title="Evaluate a concept", icon="🧪"),
+    st.Page(render_linkedin_studio, title="LinkedIn studio", icon="📣"),
+]
+
+st.sidebar.markdown("### ⚙️ OPSFORGE")
+st.sidebar.caption("AI Build Lab · Engineering, evaluation and governance")
+navigation = st.navigation(PAGES)
+navigation.run()
 
 st.divider()
 st.markdown("**OPSFORGE AI BUILD LAB** · Independent prototypes. Synthetic-data-first demonstrations. Evidence before claims.")
