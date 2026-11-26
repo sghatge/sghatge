@@ -28,14 +28,40 @@ h1,h2,h3 { letter-spacing:-.035em; }
 .concept-copy { color:#d0dced; font-size:.96rem; line-height:1.6; }
 .concept-hook { color:#83e8ff; font-weight:800; font-size:1rem; line-height:1.45; margin:.85rem 0 .2rem; }
 a { color:#7cddf4 !important; }
-div[data-testid="stMetric"] { background:#111d31; border:1px solid #29405c; padding:12px 16px; border-radius:14px; }
+.stApp, .stApp p, .stApp label, .stApp span, .stApp li, .stApp small { color:#e5edf8; }
+.stTabs [data-baseweb="tab"] { color:#d7e5f5 !important; font-weight:700; }
+.stTabs [aria-selected="true"] { color:#ff5578 !important; }
+.stMarkdown p, .stCaption, [data-testid="stCaptionContainer"] { color:#c4d2e5 !important; }
+div[data-testid="stMetric"] { background:#14233a; border:1px solid #35516f; padding:16px 18px; border-radius:14px; }
+div[data-testid="stMetricLabel"] p { color:#b9cbe0 !important; font-size:.95rem !important; }
+div[data-testid="stMetricValue"] { color:#f4f8ff !important; font-size:2.3rem !important; }
+div[data-testid="stSelectbox"] label, div[data-testid="stTextInput"] label { color:#eaf2ff !important; font-weight:700; }
+.stSelectbox div[data-baseweb="select"] > div { border-radius:12px; }
+.stButton button, .stDownloadButton button { border-radius:12px; font-weight:750; }
+
 </style>
 """, unsafe_allow_html=True)
 
 
+IMAGE_URLS = {
+    # Curated cinematic photography/AI artwork selected for the portfolio.
+    "agent-governance.svg": "https://www.techbuzz.ai/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cquality%3D80%2Cformat%3Dauto%2Cfit%3Dcover/https%3A/charming-card-d91ad3487b.media.strapiapp.com/file_6b64f1c0ac.png",
+    "deterministic-crm-qa.svg": "https://images.ai2.work/heroes/how-agentic-ai-is-reinventing-enterprise-productivity-suites.webp",
+    "preflight-agent.svg": "https://mubbits.com/services/covers/cloud.png",
+    "ajo-journey-time-machine.svg": "https://danielpopp.eu/wp-content/uploads/2025/06/dp-16652.jpg",
+    "prompt-to-journey.svg": "https://elautonomo.digital/assets/leads_premium.png",
+    "campaign-intelligence.svg": "https://danielpopp.eu/wp-content/uploads/2025/06/dp-16652.jpg",
+    "self-optimizing-test-loop.svg": "https://durranitech.com/images/blogs/n8n_automation.png",
+    "four-agents-one-campaign.svg": "https://www.pandascodingschool.com/assets/production-ai-agent-architecture.png",
+    "ai-readable-email.svg": "https://images.ai2.work/heroes/how-agentic-ai-is-reinventing-enterprise-productivity-suites.webp",
+    "opsforge-architecture.svg": "https://durranitech.com/images/blogs/n8n_automation.png",
+    "adobe-campaign-v8-governance.svg": "https://img.deepseek.day/aiweb/deepseek-blog-fig-01-20260702.jpg",
+    "ai-readiness-calculator.svg": "https://mubbits.com/services/covers/cloud.png",
+}
+
 def image_html(filename, alt="OPSFORGE AI concept artwork"):
-    """Render the committed concept artwork from GitHub's raw asset endpoint."""
-    image_url = f"https://raw.githubusercontent.com/sghatge/sghatge/main/build-lab/assets/{filename}"
+    """Render a curated, high-resolution visual for each portfolio concept."""
+    image_url = IMAGE_URLS.get(filename, IMAGE_URLS["opsforge-architecture.svg"])
     return f'<div class="project-visual"><img src="{image_url}" alt="{alt}" loading="lazy"></div>'
 
 PROJECTS = [
