@@ -1,5 +1,7 @@
 import streamlit as st
 from datetime import date
+from pathlib import Path
+import base64
 
 st.set_page_config(page_title="OPSFORGE AI Build Lab", page_icon="⚙️", layout="wide")
 
@@ -16,24 +18,53 @@ h1,h2,h3 { letter-spacing:-.035em; }
 .card { border:1px solid #29405c; border-radius:16px; padding:1rem 1.1rem; background:rgba(17,29,49,.88); min-height:180px; }
 .tag { display:inline-block; padding:.2rem .55rem; border-radius:999px; background:#173b52; color:#83e1f5; font-size:.72rem; font-weight:700; margin-bottom:.6rem; }
 .small { color:#9eafc7; font-size:.84rem; }
+.project-visual img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; border-radius:16px; border:1px solid #294765; margin-bottom:.65rem; box-shadow:0 12px 34px rgba(0,0,0,.28); }
+.concept-card { border:1px solid #294765; border-radius:18px; padding:.8rem; background:linear-gradient(145deg,rgba(18,34,58,.96),rgba(10,18,32,.96)); min-height:100%; }
+.concept-title { color:#f1f6ff; font-size:1.12rem; font-weight:800; margin:.25rem 0 .45rem; }
+.concept-copy { color:#b5c4d9; font-size:.9rem; line-height:1.45; }
+.concept-hook { color:#81e2f7; font-weight:700; font-size:.9rem; margin:.7rem 0; }
 a { color:#7cddf4 !important; }
 div[data-testid="stMetric"] { background:#111d31; border:1px solid #29405c; padding:12px 16px; border-radius:14px; }
 </style>
 """, unsafe_allow_html=True)
 
+
+def image_html(filename, alt="OPSFORGE AI concept artwork"):
+    """Load a repository-local SVG and render it as a responsive portfolio image."""
+    asset_path = Path(__file__).parent / "assets" / filename
+    svg = asset_path.read_text(encoding="utf-8")
+    encoded = base64.b64encode(svg.encode("utf-8")).decode("ascii")
+    return f'<div class="project-visual"><img src="data:image/svg+xml;base64,{encoded}" alt="{alt}" loading="lazy"></div>'
+
 PROJECTS = [
- {"name":"OPSFORGE","family":"Governance","stage":"Live platform","problem":"AI agents need bounded tools, human approval and an auditable run history.","proof":"Six registered agents, approval workflow, override reasons and audit trail.","repo":"https://github.com/sghatge/opsforge","demo":"https://sghatge.github.io/opsforge/","punch":"Autonomy without accountability is just automation with a bigger blast radius."},
- {"name":"ACC Agent Gate","family":"Governance","stage":"Live demo","problem":"An AI agent should not be able to trigger a consequential campaign action without policy checks.","proof":"Policy gate, approval boundary and tamper-evident evidence patterns.","repo":"https://github.com/sghatge/acc-agent-gate","demo":"https://sghatge.github.io/acc-agent-gate/","punch":"Put a control plane between the agent and the action."},
- {"name":"AJO Journey Time Machine","family":"Journey intelligence","stage":"Live Streamlit + MCP","problem":"Journey definitions and event streams need deterministic validation before operational use.","proof":"Synthetic scenario simulation, consent gates, risk heuristics and hash-chained audit evidence.","repo":"https://github.com/sghatge/ajo-journey-time-machine","demo":"https://ajo-journey-time-machine.streamlit.app/","punch":"Replay the journey before the customer lives it."},
- {"name":"CampaignPulse AI","family":"Journey intelligence","stage":"Live Streamlit","problem":"Campaign teams need transparent diagnostics from aggregate performance metrics.","proof":"Deterministic KPIs, validation, evidence-labelled findings and exportable reports.","repo":"https://github.com/sghatge/campaignpulse-ai","demo":"https://campaignpulse-ai.streamlit.app/","punch":"From campaign numbers to the next operational decision."},
- {"name":"AI Readiness Calculator","family":"Transformation","stage":"Live web app","problem":"AI adoption needs measurable capability, governance and change-readiness signals.","proof":"31-question assessment, 10 dimensions, what-if simulator and 30-day action plan.","repo":"https://github.com/sghatge/ai-readiness-calculator","demo":"https://sghatge.github.io/ai-readiness-calculator/","punch":"AI adoption is a capability journey—not a licence purchase."},
- {"name":"Email 2030 Showcase","family":"Autonomous engineering","stage":"Five demos","problem":"Email operations are changing as agents, orchestration and AI-readable content converge.","proof":"Prompt-to-journey, governance, pre-flight, AI-readable email and test-loop concepts.","repo":"https://github.com/sghatge/email-2030-showcase","demo":"https://github.com/sghatge/email-2030-showcase","punch":"The inbox is becoming an interface. Is your email ready?"},
- {"name":"Adobe Campaign v8 Governance","family":"Governance","stage":"Portfolio showcase","problem":"Enterprise campaign operations need repeatable governance and evidence.","proof":"Independent governance blueprint, QA patterns and operational controls.","repo":"https://github.com/sghatge/adobe-campaign-v8-governance","demo":"https://sghatge.github.io/adobe-campaign-v8-governance/","punch":"Campaign quality should be engineered—not inspected at the last minute."},
- {"name":"Customer 360 Intelligence","family":"Journey intelligence","stage":"Learning lab","problem":"Customer data, identity, consent and activation must work as one governed lifecycle.","proof":"Synthetic-data learning lab for XDM, identity resolution, consent and audiences.","repo":"https://github.com/sghatge/customer-360-intelligence","demo":"https://sghatge.github.io/adobe-campaign-v8-governance/demos/customer-360.html","punch":"A 360° view is only useful when identity and consent are trustworthy."},
- {"name":"Digital Marketing AI Agents","family":"Autonomous engineering","stage":"Live Streamlit","problem":"Marketing workflows can be decomposed into bounded, reviewable agent tasks.","proof":"Interactive strategy, content, campaign QA and performance-analysis workflows.","repo":"https://github.com/sghatge/digital-marketing-ai-agents","demo":"https://sghatge-digital-marketing-ai-agents-app-5uhltb.streamlit.app/","punch":"Don't add AI to the workflow. Redesign the workflow around outcomes."},
- {"name":"Campaign v8 Pre-flight Agent","family":"Governance","stage":"Prototype","problem":"Campaign release readiness should be checked before deployment windows.","proof":"Deterministic pre-flight controls and explainable verdicts.","repo":"https://github.com/sghatge/campaign-v8-preflight-agent","demo":"https://github.com/sghatge/campaign-v8-preflight-agent","punch":"The safest campaign is the one that fails fast before send time."},
- {"name":"AJO Journey Orchestration Lab","family":"Journey intelligence","stage":"Learning lab","problem":"Teams need a practical environment to reason about orchestration patterns.","proof":"Independent AJO-oriented journey learning and design exercises.","repo":"https://github.com/sghatge/ajo-journey-orchestration-lab","demo":"https://github.com/sghatge/ajo-journey-orchestration-lab","punch":"Orchestration is not a canvas. It is a set of operational decisions."},
- {"name":"Salesforce CRM AI Lab","family":"Transformation","stage":"Learning lab","problem":"CRM intelligence needs structured lifecycle and decision-support patterns.","proof":"Independent CRM AI learning stream.","repo":"https://github.com/sghatge/salesforce-crm-ai-lab","demo":"https://github.com/sghatge/salesforce-crm-ai-lab","punch":"Customer intelligence becomes valuable when it changes the next action."}
+ {"name":"OPSFORGE","image":"opsforge-architecture.svg","family":"Governance","stage":"Live platform","problem":"AI agents need bounded tools, human approval and an auditable run history.","proof":"Six registered agents, approval workflow, override reasons and audit trail.","repo":"https://github.com/sghatge/opsforge","demo":"https://sghatge.github.io/opsforge/","punch":"Autonomy without accountability is just automation with a bigger blast radius."},
+ {"name":"ACC Agent Gate","image":"agent-governance.svg","family":"Governance","stage":"Live demo","problem":"An AI agent should not be able to trigger a consequential campaign action without policy checks.","proof":"Policy gate, approval boundary and tamper-evident evidence patterns.","repo":"https://github.com/sghatge/acc-agent-gate","demo":"https://sghatge.github.io/acc-agent-gate/","punch":"Put a control plane between the agent and the action."},
+ {"name":"AJO Journey Time Machine","image":"ajo-journey-time-machine.svg","family":"Journey intelligence","stage":"Live Streamlit + MCP","problem":"Journey definitions and event streams need deterministic validation before operational use.","proof":"Synthetic scenario simulation, consent gates, risk heuristics and hash-chained audit evidence.","repo":"https://github.com/sghatge/ajo-journey-time-machine","demo":"https://ajo-journey-time-machine.streamlit.app/","punch":"Replay the journey before the customer lives it."},
+ {"name":"CampaignPulse AI","image":"campaign-intelligence.svg","family":"Journey intelligence","stage":"Live Streamlit","problem":"Campaign teams need transparent diagnostics from aggregate performance metrics.","proof":"Deterministic KPIs, validation, evidence-labelled findings and exportable reports.","repo":"https://github.com/sghatge/campaignpulse-ai","demo":"https://campaignpulse-ai.streamlit.app/","punch":"From campaign numbers to the next operational decision."},
+ {"name":"AI Readiness Calculator","image":"ai-readiness-calculator.svg","family":"Transformation","stage":"Live web app","problem":"AI adoption needs measurable capability, governance and change-readiness signals.","proof":"31-question assessment, 10 dimensions, what-if simulator and 30-day action plan.","repo":"https://github.com/sghatge/ai-readiness-calculator","demo":"https://sghatge.github.io/ai-readiness-calculator/","punch":"AI adoption is a capability journey—not a licence purchase."},
+ {"name":"Email 2030 Showcase","image":"ai-readable-email.svg","family":"Autonomous engineering","stage":"Five demos","problem":"Email operations are changing as agents, orchestration and AI-readable content converge.","proof":"Prompt-to-journey, governance, pre-flight, AI-readable email and test-loop concepts.","repo":"https://github.com/sghatge/email-2030-showcase","demo":"https://github.com/sghatge/email-2030-showcase","punch":"The inbox is becoming an interface. Is your email ready?"},
+ {"name":"Adobe Campaign v8 Governance","image":"adobe-campaign-v8-governance.svg","family":"Governance","stage":"Portfolio showcase","problem":"Enterprise campaign operations need repeatable governance and evidence.","proof":"Independent governance blueprint, QA patterns and operational controls.","repo":"https://github.com/sghatge/adobe-campaign-v8-governance","demo":"https://sghatge.github.io/adobe-campaign-v8-governance/","punch":"Campaign quality should be engineered—not inspected at the last minute."},
+ {"name":"Customer 360 Intelligence","image":"ajo-journey-time-machine.svg","family":"Journey intelligence","stage":"Learning lab","problem":"Customer data, identity, consent and activation must work as one governed lifecycle.","proof":"Synthetic-data learning lab for XDM, identity resolution, consent and audiences.","repo":"https://github.com/sghatge/customer-360-intelligence","demo":"https://sghatge.github.io/adobe-campaign-v8-governance/demos/customer-360.html","punch":"A 360° view is only useful when identity and consent are trustworthy."},
+ {"name":"Digital Marketing AI Agents","image":"four-agents-one-campaign.svg","family":"Autonomous engineering","stage":"Live Streamlit","problem":"Marketing workflows can be decomposed into bounded, reviewable agent tasks.","proof":"Interactive strategy, content, campaign QA and performance-analysis workflows.","repo":"https://github.com/sghatge/digital-marketing-ai-agents","demo":"https://sghatge-digital-marketing-ai-agents-app-5uhltb.streamlit.app/","punch":"Don't add AI to the workflow. Redesign the workflow around outcomes."},
+ {"name":"Campaign v8 Pre-flight Agent","image":"preflight-agent.svg","family":"Governance","stage":"Prototype","problem":"Campaign release readiness should be checked before deployment windows.","proof":"Deterministic pre-flight controls and explainable verdicts.","repo":"https://github.com/sghatge/campaign-v8-preflight-agent","demo":"https://github.com/sghatge/campaign-v8-preflight-agent","punch":"The safest campaign is the one that fails fast before send time."},
+ {"name":"AJO Journey Orchestration Lab","image":"prompt-to-journey.svg","family":"Journey intelligence","stage":"Learning lab","problem":"Teams need a practical environment to reason about orchestration patterns.","proof":"Independent AJO-oriented journey learning and design exercises.","repo":"https://github.com/sghatge/ajo-journey-orchestration-lab","demo":"https://github.com/sghatge/ajo-journey-orchestration-lab","punch":"Orchestration is not a canvas. It is a set of operational decisions."},
+ {"name":"Salesforce CRM AI Lab","image":"deterministic-crm-qa.svg","family":"Transformation","stage":"Learning lab","problem":"CRM intelligence needs structured lifecycle and decision-support patterns.","proof":"Independent CRM AI learning stream.","repo":"https://github.com/sghatge/salesforce-crm-ai-lab","demo":"https://github.com/sghatge/salesforce-crm-ai-lab","punch":"Customer intelligence becomes valuable when it changes the next action."}
+]
+
+
+CONCEPTS = [
+ {"name":"Email 2030 — Agent Governance","family":"Enterprise AI Governance","image":"agent-governance.svg","problem":"Place explicit policy and human approval between autonomous agents and campaign-impacting actions.","hook":"Your AI agent is only as trustworthy as the controls around it.","repo":"https://github.com/sghatge/email-2030-showcase","demo":"https://github.com/sghatge/acc-agent-gate"},
+ {"name":"Campaign Pre-flight Agent","family":"Release Assurance","image":"preflight-agent.svg","problem":"Run deterministic readiness checks before a campaign enters a deployment window.","hook":"The safest campaign is the one that fails fast before send time.","repo":"https://github.com/sghatge/campaign-v8-preflight-agent","demo":"https://github.com/sghatge/campaign-v8-preflight-agent"},
+ {"name":"Prompt to Journey","family":"Journey Intelligence","image":"prompt-to-journey.svg","problem":"Translate a marketing brief into a structured, reviewable customer journey blueprint.","hook":"From a sentence to a journey blueprint—with humans still in control.","repo":"https://github.com/sghatge/email-2030-showcase/tree/main/01-prompt-to-journey","demo":"https://github.com/sghatge/email-2030-showcase"},
+ {"name":"AI-readable Email","family":"Future of Email","image":"ai-readable-email.svg","problem":"Explore how structured, semantically clear email content can be easier for AI-assisted experiences to interpret.","hook":"The inbox is becoming an interface. Is your email ready for AI?","repo":"https://github.com/sghatge/email-2030-showcase/tree/main/04-ai-readable-email","demo":"https://github.com/sghatge/email-2030-showcase"},
+ {"name":"Self-Optimizing Test Loop","family":"Autonomous Engineering","image":"self-optimizing-test-loop.svg","problem":"Demonstrate a closed-loop test workflow that measures, learns and proposes the next experiment.","hook":"Stop guessing what works. Build a loop that learns from evidence.","repo":"https://github.com/sghatge/email-2030-showcase/tree/main/05-test-loop","demo":"https://github.com/sghatge/email-2030-showcase"},
+ {"name":"AJO Journey Time Machine","family":"Journey Intelligence","image":"ajo-journey-time-machine.svg","problem":"Replay synthetic journey events, validate consent gates and inspect deterministic risk evidence.","hook":"Replay the journey before the customer lives it.","repo":"https://github.com/sghatge/ajo-journey-time-machine","demo":"https://ajo-journey-time-machine.streamlit.app/"},
+ {"name":"OPSFORGE Architecture","family":"Enterprise AI Operating Model","image":"opsforge-architecture.svg","problem":"Coordinate bounded agents, named approvals, run ledgers and auditable operational workflows.","hook":"Autonomy without accountability is just automation with a bigger blast radius.","repo":"https://github.com/sghatge/opsforge","demo":"https://sghatge.github.io/opsforge/"},
+ {"name":"Deterministic CRM QA Engine","family":"CRM Governance","image":"deterministic-crm-qa.svg","problem":"Turn operational QA rules into repeatable checks with explainable pass, warning and fail outcomes.","hook":"Campaign quality should be engineered—not inspected at the last minute.","repo":"https://github.com/sghatge/adobe-campaign-v8-governance","demo":"https://sghatge.github.io/adobe-campaign-v8-governance/"},
+ {"name":"Four Agents, One Campaign","family":"Multi-Agent Systems","image":"four-agents-one-campaign.svg","problem":"Explore specialist agents collaborating across planning, content, QA and performance analysis.","hook":"One campaign. Four specialist agents. One governed workflow.","repo":"https://github.com/sghatge/digital-marketing-ai-agents","demo":"https://sghatge-digital-marketing-ai-agents-app-5uhltb.streamlit.app/"},
+ {"name":"Adobe Campaign v8 Governance","family":"MarTech Architecture","image":"adobe-campaign-v8-governance.svg","problem":"Showcase campaign governance patterns, QA evidence and operational control points.","hook":"Enterprise campaign operations deserve engineering-grade governance.","repo":"https://github.com/sghatge/adobe-campaign-v8-governance","demo":"https://sghatge.github.io/adobe-campaign-v8-governance/"},
+ {"name":"Campaign Intelligence Agent","family":"Marketing Analytics","image":"campaign-intelligence.svg","problem":"Convert aggregate campaign metrics into transparent KPIs, diagnostic findings and next checks.","hook":"From campaign numbers to the next operational decision.","repo":"https://github.com/sghatge/campaignpulse-ai","demo":"https://campaignpulse-ai.streamlit.app/"},
+ {"name":"AI Readiness Calculator","family":"Enterprise Transformation","image":"ai-readiness-calculator.svg","problem":"Assess adoption capability across skills, governance, use-case fit and organizational readiness.","hook":"AI adoption is a capability journey—not a licence purchase.","repo":"https://github.com/sghatge/ai-readiness-calculator","demo":"https://sghatge.github.io/ai-readiness-calculator/"}
 ]
 
 RESEARCH = [
@@ -52,7 +83,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-projects_tab, research_tab, evaluate_tab, publish_tab = st.tabs(["🚀 Build portfolio","🧠 Research radar","🧪 Evaluate a concept","📣 LinkedIn studio"])
+projects_tab, concepts_tab, research_tab, evaluate_tab, publish_tab = st.tabs(["🚀 Build portfolio","✨ Concept gallery","🧠 Research radar","🧪 Evaluate a concept","📣 LinkedIn studio"])
 
 with projects_tab:
     c1,c2,c3=st.columns(3)
@@ -66,9 +97,25 @@ with projects_tab:
         cols=st.columns(2)
         for col,p in zip(cols,visible[start:start+2]):
             with col:
+                st.markdown(image_html(p["image"], p["name"]), unsafe_allow_html=True)
                 st.markdown(f'<div class="card"><span class="tag">{p["family"]} · {p["stage"]}</span><h3>{p["name"]}</h3><p>{p["problem"]}</p><p class="small"><b>What you can inspect:</b> {p["proof"]}</p><p><i>“{p["punch"]}”</i></p></div>',unsafe_allow_html=True)
                 st.markdown(f'[Open repository ↗]({p["repo"]})　 ·　 [Open demo ↗]({p["demo"]})')
     st.caption("Portfolio inventory is curated from public repositories. A repository link is not a claim that every concept has a hosted interactive demo.")
+
+
+with concepts_tab:
+    st.markdown("### The 12-concept visual showcase")
+    st.write("Each concept has its own original OPSFORGE artwork, a clear enterprise problem, a memorable point of view and a direct path to its repository or demonstration.")
+    family_filter = st.selectbox("Filter concepts", ["All"] + sorted({x["family"] for x in CONCEPTS}), key="concept_family")
+    selected_concepts = [x for x in CONCEPTS if family_filter == "All" or x["family"] == family_filter]
+    for start in range(0, len(selected_concepts), 3):
+        cols = st.columns(3)
+        for col, item in zip(cols, selected_concepts[start:start+3]):
+            with col:
+                st.markdown(image_html(item["image"], item["name"]), unsafe_allow_html=True)
+                st.markdown(f'<div class="concept-card"><span class="tag">{item["family"]}</span><div class="concept-title">{item["name"]}</div><div class="concept-copy">{item["problem"]}</div><div class="concept-hook">“{item["hook"]}”</div></div>', unsafe_allow_html=True)
+                st.markdown(f'[Source ↗]({item["repo"]})　 ·　 [Demo ↗]({item["demo"]})')
+    st.caption("Artwork is original, concept-specific vector illustration. Project maturity and demo availability are stated per repository; visual polish does not imply production readiness.")
 
 with research_tab:
     st.markdown("### Research-to-build connections")
