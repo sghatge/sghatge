@@ -189,6 +189,14 @@ A practical series covering agent security, deterministic controls, evaluation, 
 
 The app includes a searchable project catalogue, research-to-build radar, transparent prototype evaluation rubric and LinkedIn publishing studio. To deploy, select this repository, branch `main`, and main file path `build-lab/app.py` in Streamlit Community Cloud.
 
+## LinkedIn & Instagram Content Studio
+
+A practical 10-day content campaign positioning Sangram Ghatge around enterprise AI transformation, CRM technology, agentic workflows and OPSFORGE build demonstrations.
+
+- [10-Day AI Authority Launch Pack](https://github.com/sghatge/sghatge/blob/main/content/10-day-ai-authority-launch-pack.md) — complete reel scripts, hooks, visual directions, captions, CTAs, production standards and launch checklist.
+
+The series prioritises real demonstrations, evidence-backed claims, synthetic or sanitized data, and human accountability.
+
 ## Connect & Explore
 
 - **GitHub:** [github.com/sghatge](https://github.com/sghatge)
