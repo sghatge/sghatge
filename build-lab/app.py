@@ -20,9 +20,18 @@ h1,h2,h3 { letter-spacing:-.035em; }
 .card p { color:#d2deee; line-height:1.55; }
 .tag { display:inline-block; padding:.2rem .55rem; border-radius:999px; background:#173b52; color:#83e1f5; font-size:.72rem; font-weight:700; margin-bottom:.6rem; }
 .small { color:#9eafc7; font-size:.84rem; }
-.project-visual { overflow:hidden; width:100%; max-width:none; box-sizing:border-box; border-radius:12px; margin:0 0 .55rem; background:#071326; border:1px solid #294765; box-shadow:0 8px 20px rgba(0,0,0,.24); }
-.project-visual img { width:100%; height:88px; object-fit:cover; display:block; transition:transform .25s ease; }
-.project-visual:hover img { transform:scale(1.02); }
+.project-visual { display:none !important; }
+.project-card { border:1px solid #294765; border-radius:18px; padding:1.05rem 1.1rem 1rem; background:linear-gradient(145deg,rgba(18,35,58,.98),rgba(8,17,31,.98)); min-height:245px; box-shadow:0 12px 28px rgba(0,0,0,.2); position:relative; overflow:hidden; }
+.project-card:before { content:""; position:absolute; width:150px; height:150px; right:-65px; top:-75px; border-radius:50%; background:var(--glow); filter:blur(36px); opacity:.18; pointer-events:none; }
+.project-card-head { display:flex; align-items:center; gap:.75rem; margin-bottom:.8rem; position:relative; }
+.project-icon { width:48px; height:48px; min-width:48px; display:grid; place-items:center; border-radius:14px; font-size:1.45rem; background:var(--icon-bg); border:1px solid var(--icon-border); box-shadow:inset 0 0 18px rgba(255,255,255,.035); }
+.project-name { color:#f4f8ff; font-size:1.2rem; font-weight:850; line-height:1.2; letter-spacing:-.025em; }
+.project-meta { color:#a9bdd5; font-size:.72rem; font-weight:750; letter-spacing:.035em; text-transform:uppercase; margin-top:.28rem; }
+.project-card p { color:#d0dced; line-height:1.48; font-size:.91rem; margin:.55rem 0; position:relative; }
+.project-proof { color:#b9cce1 !important; border-left:2px solid var(--accent); padding-left:.65rem; }
+.project-punch { color:#85e6f8 !important; font-weight:700; font-size:.88rem !important; }
+.project-links { display:flex; gap:1rem; margin:.55rem 0 1.2rem; font-size:.83rem; font-weight:750; }
+.project-links a { text-decoration:none; border-bottom:1px solid rgba(124,221,244,.35); padding-bottom:2px; }
 .concept-card { border:1px solid #31516f; border-radius:16px; padding:.85rem; background:linear-gradient(145deg,rgba(22,43,70,.98),rgba(8,17,31,.98)); min-height:100%; box-shadow:0 9px 22px rgba(0,0,0,.18); }
 .concept-title { color:#ffffff; font-size:1.22rem; font-weight:850; margin:.35rem 0 .65rem; letter-spacing:-.02em; }
 .concept-copy { color:#d0dced; font-size:.96rem; line-height:1.6; }
@@ -107,13 +116,37 @@ with projects_tab:
     family=st.selectbox("Filter by product family",["All"]+sorted(set(p["family"] for p in PROJECTS)))
     query=st.text_input("Search builds",placeholder="Try governance, journey, campaign, readiness…")
     visible=[p for p in PROJECTS if (family=="All" or p["family"]==family) and (query.lower() in (p["name"]+" "+p["problem"]+" "+p["proof"]).lower())]
+    PROJECT_ICON_STYLE = {
+        "OPSFORGE": ("⚙️","#53d9f4"),
+        "ACC Agent Gate": ("🛡️","#9b8cff"),
+        "AJO Journey Time Machine": ("🧭","#42d9c5"),
+        "CampaignPulse AI": ("📈","#ffb454"),
+        "AI Readiness Calculator": ("🎯","#8ddc86"),
+        "Email 2030 Showcase": ("✉️","#63b7ff"),
+        "Adobe Campaign v8 Governance": ("🧩","#ff8caa"),
+        "Customer 360 Intelligence": ("🌐","#4fd7e8"),
+        "Digital Marketing AI Agents": ("🤖","#b18cff"),
+        "Campaign v8 Pre-flight Agent": ("🚦","#ffc45e"),
+        "AJO Journey Orchestration Lab": ("🕸️","#52d6b5"),
+        "Salesforce CRM AI Lab": ("☁️","#72a7ff"),
+    }
     for start in range(0,len(visible),2):
-        cols=st.columns(2)
+        cols=st.columns(2, gap="medium")
         for col,p in zip(cols,visible[start:start+2]):
             with col:
-                st.markdown(image_html(p["image"], p["name"]), unsafe_allow_html=True)
-                st.markdown(f'<div class="card"><span class="tag">{p["family"]} · {p["stage"]}</span><h3>{p["name"]}</h3><p>{p["problem"]}</p><p class="small"><b>What you can inspect:</b> {p["proof"]}</p><p><i>“{p["punch"]}”</i></p></div>',unsafe_allow_html=True)
-                st.markdown(f'[Open repository ↗]({p["repo"]})　 ·　 [Open demo ↗]({p["demo"]})')
+                glyph,accent=PROJECT_ICON_STYLE.get(p["name"],("✦","#63d8f2"))
+                card_html = f'''
+                <div class="project-card" style="--accent:{accent};--glow:{accent};--icon-bg:{accent}18;--icon-border:{accent}66">
+                  <div class="project-card-head">
+                    <div class="project-icon">{glyph}</div>
+                    <div><div class="project-name">{p["name"]}</div><div class="project-meta">{p["family"]} · {p["stage"]}</div></div>
+                  </div>
+                  <p>{p["problem"]}</p>
+                  <p class="project-proof"><b>What you can inspect</b><br>{p["proof"]}</p>
+                  <p class="project-punch">“{p["punch"]}”</p>
+                </div>'''
+                st.markdown(card_html,unsafe_allow_html=True)
+                st.markdown(f'<div class="project-links"><a href="{p["repo"]}" target="_blank">↗ Repository</a><a href="{p["demo"]}" target="_blank">↗ Live demo / project</a></div>',unsafe_allow_html=True)
     st.caption("Portfolio inventory is curated from public repositories. A repository link is not a claim that every concept has a hosted interactive demo.")
 
 
