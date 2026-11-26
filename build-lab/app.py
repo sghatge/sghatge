@@ -15,14 +15,18 @@ h1,h2,h3 { letter-spacing:-.035em; }
 .eyebrow { color:#70d9f2; font-size:.75rem; letter-spacing:.18em; font-weight:800; }
 .punch { font-size:clamp(2rem,4vw,3.7rem); line-height:1.03; font-weight:850; margin:.6rem 0; color:#f5f8ff; }
 .sub { color:#b5c4d9; font-size:1.05rem; max-width:850px; }
-.card { border:1px solid #29405c; border-radius:16px; padding:1rem 1.1rem; background:rgba(17,29,49,.88); min-height:180px; }
+.card { border:1px solid #31516f; border-radius:18px; padding:1.2rem 1.25rem; background:linear-gradient(145deg,rgba(20,39,64,.97),rgba(10,19,34,.98)); min-height:190px; box-shadow:0 10px 28px rgba(0,0,0,.18); }
+.card h3 { color:#f5f8ff; font-size:1.35rem; margin:.3rem 0 .65rem; }
+.card p { color:#d2deee; line-height:1.55; }
 .tag { display:inline-block; padding:.2rem .55rem; border-radius:999px; background:#173b52; color:#83e1f5; font-size:.72rem; font-weight:700; margin-bottom:.6rem; }
 .small { color:#9eafc7; font-size:.84rem; }
-.project-visual img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; border-radius:16px; border:1px solid #294765; margin-bottom:.65rem; box-shadow:0 12px 34px rgba(0,0,0,.28); }
-.concept-card { border:1px solid #294765; border-radius:18px; padding:.8rem; background:linear-gradient(145deg,rgba(18,34,58,.96),rgba(10,18,32,.96)); min-height:100%; }
-.concept-title { color:#f1f6ff; font-size:1.12rem; font-weight:800; margin:.25rem 0 .45rem; }
-.concept-copy { color:#b5c4d9; font-size:.9rem; line-height:1.45; }
-.concept-hook { color:#81e2f7; font-weight:700; font-size:.9rem; margin:.7rem 0; }
+.project-visual { overflow:hidden; border-radius:18px; margin-bottom:.8rem; background:#071326; border:1px solid #31516f; box-shadow:0 16px 40px rgba(0,0,0,.38); }
+.project-visual img { width:100%; aspect-ratio:3/2; object-fit:cover; display:block; transition:transform .35s ease, filter .35s ease; filter:saturate(1.12) contrast(1.04); }
+.project-visual:hover img { transform:scale(1.035); filter:saturate(1.35) contrast(1.08); }
+.concept-card { border:1px solid #31516f; border-radius:18px; padding:1rem; background:linear-gradient(145deg,rgba(22,43,70,.98),rgba(8,17,31,.98)); min-height:100%; box-shadow:0 12px 30px rgba(0,0,0,.2); }
+.concept-title { color:#ffffff; font-size:1.22rem; font-weight:850; margin:.35rem 0 .65rem; letter-spacing:-.02em; }
+.concept-copy { color:#d0dced; font-size:.96rem; line-height:1.6; }
+.concept-hook { color:#83e8ff; font-weight:800; font-size:1rem; line-height:1.45; margin:.85rem 0 .2rem; }
 a { color:#7cddf4 !important; }
 div[data-testid="stMetric"] { background:#111d31; border:1px solid #29405c; padding:12px 16px; border-radius:14px; }
 </style>
@@ -30,11 +34,9 @@ div[data-testid="stMetric"] { background:#111d31; border:1px solid #29405c; padd
 
 
 def image_html(filename, alt="OPSFORGE AI concept artwork"):
-    """Load a repository-local SVG and render it as a responsive portfolio image."""
-    asset_path = Path(__file__).parent / "assets" / filename
-    svg = asset_path.read_text(encoding="utf-8")
-    encoded = base64.b64encode(svg.encode("utf-8")).decode("ascii")
-    return f'<div class="project-visual"><img src="data:image/svg+xml;base64,{encoded}" alt="{alt}" loading="lazy"></div>'
+    """Render the committed concept artwork from GitHub's raw asset endpoint."""
+    image_url = f"https://raw.githubusercontent.com/sghatge/sghatge/main/build-lab/assets/{filename}"
+    return f'<div class="project-visual"><img src="{image_url}" alt="{alt}" loading="lazy"></div>'
 
 PROJECTS = [
  {"name":"OPSFORGE","image":"opsforge-architecture.svg","family":"Governance","stage":"Live platform","problem":"AI agents need bounded tools, human approval and an auditable run history.","proof":"Six registered agents, approval workflow, override reasons and audit trail.","repo":"https://github.com/sghatge/opsforge","demo":"https://sghatge.github.io/opsforge/","punch":"Autonomy without accountability is just automation with a bigger blast radius."},
