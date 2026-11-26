@@ -95,6 +95,26 @@ Independent learning streams for journey orchestration and CRM intelligence.
 </tr>
 </table>
 
+
+### 07 · OPSFORGE Signal-to-Execution
+
+Research-to-execution pipeline with public RSS intake, weighted relevance scoring, specialist agent routing, Autonomous / Notify / Approve classification, reviewer decisions and downloadable evidence ledger. External actions remain disabled.
+
+[Repository](https://github.com/sghatge/opsforge) · [Signal pipeline source](https://github.com/sghatge/opsforge/blob/main/signal_pipeline.py)
+
+### 08 · OPSFORGE Resilience Command Centre
+
+A dedicated resilience workspace integrated into the OPSFORGE Streamlit showcase, alongside the signal pipeline and governed operating model.
+
+[Repository](https://github.com/sghatge/opsforge) · [Resilience module](https://github.com/sghatge/opsforge/tree/main/products/resilience-command-centre)
+
+### 09 · ACC Agent Gate v2.1
+
+Hardened agent-to-campaign governance with request timeouts, HTTP security tests, Dependabot and a zero-cost deployment guide.
+
+[Repository](https://github.com/sghatge/acc-agent-gate)
+
+
 ## More Projects
 
 | Project | What it explores | Links |
