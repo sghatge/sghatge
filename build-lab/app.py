@@ -229,7 +229,13 @@ def render_evaluate():
         elif total>=60: st.warning("Promising. Close the evidence gaps and repeat the evaluation.")
         else: st.error("Early-stage. Prioritise core functionality, test coverage and clear safety boundaries.")
         st.dataframe([{"Dimension":k,"Score":v,"Max":5} for k,v in scores.items()],width="stretch",hide_index=True)
-        st.download_button("Download evaluation as CSV","Dimension,Score,Max\n"+"\n".join(f"{k},{v},5" for k,v in scores.items())+f"\nOverall,{total},100",file_name="opsforge_concept_evaluation.csv",mime="text/csv")
+        csv_buffer=io.StringIO()
+        writer=csv.writer(csv_buffer,quoting=csv.QUOTE_MINIMAL)
+        writer.writerow(["Dimension","Score","Max"])
+        writer.writerows([[dimension,score,5] for dimension,score in scores.items()])
+        writer.writerow(["Overall",total,100])
+        concept_slug=re.sub(r"[^a-z0-9]+","-",concept.lower()).strip("-")
+        st.download_button("Download evaluation as CSV",csv_buffer.getvalue(),file_name=f"opsforge-evaluation-{concept_slug}.csv",mime="text/csv")
     st.caption("Scores are user-entered and not independently verified. Do not interpret this score as a security certification or readiness guarantee.")
 
 
