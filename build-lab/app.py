@@ -20,8 +20,8 @@ h1,h2,h3 { letter-spacing:-.035em; }
 .card p { color:#d2deee; line-height:1.55; }
 .tag { display:inline-block; padding:.2rem .55rem; border-radius:999px; background:#173b52; color:#83e1f5; font-size:.72rem; font-weight:700; margin-bottom:.6rem; }
 .small { color:#9eafc7; font-size:.84rem; }
-.project-visual { overflow:hidden; border-radius:12px; margin:0 auto .55rem; max-width:300px; background:#071326; border:1px solid #294765; box-shadow:0 8px 20px rgba(0,0,0,.24); }
-.project-visual img { width:100%; height:78px; object-fit:cover; display:block; transition:transform .25s ease; }
+.project-visual { overflow:hidden; width:100%; max-width:none; box-sizing:border-box; border-radius:12px; margin:0 0 .55rem; background:#071326; border:1px solid #294765; box-shadow:0 8px 20px rgba(0,0,0,.24); }
+.project-visual img { width:100%; height:88px; object-fit:cover; display:block; transition:transform .25s ease; }
 .project-visual:hover img { transform:scale(1.02); }
 .concept-card { border:1px solid #31516f; border-radius:16px; padding:.85rem; background:linear-gradient(145deg,rgba(22,43,70,.98),rgba(8,17,31,.98)); min-height:100%; box-shadow:0 9px 22px rgba(0,0,0,.18); }
 .concept-title { color:#ffffff; font-size:1.22rem; font-weight:850; margin:.35rem 0 .65rem; letter-spacing:-.02em; }
