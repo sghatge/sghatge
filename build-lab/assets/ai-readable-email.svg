@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="ai readable email illustration">
+ <defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071326"/><stop offset=".55" stop-color="#101c38"/><stop offset="1" stop-color="#160f32"/></linearGradient>
+ <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#35d2ff"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+ <radialGradient id="orb"><stop stop-color="#35d2ff" stop-opacity=".38"/><stop offset="1" stop-color="#35d2ff" stop-opacity="0"/></radialGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+ <filter id="shadow"><feGaussianBlur stdDeviation="5"/></filter>
+ <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#8cb7ef" stroke-opacity=".09" stroke-width="1"/></pattern>
+ </defs>
+ <rect width="900" height="600" rx="28" fill="url(#bg)"/><rect width="900" height="600" rx="28" fill="url(#grid)"/>
+ <circle cx="150" cy="80" r="180" fill="url(#orb)" opacity=".6"/><circle cx="760" cy="530" r="180" fill="url(#orb)" opacity=".4"/>
+ <path d="M0 520 Q220 455 430 520T900 500" fill="none" stroke="#35d2ff" stroke-opacity=".18" stroke-width="2"/>
+ <rect x="150" y="160" width="430" height="300" rx="24" fill="#102744" stroke="#35d2ff" stroke-width="4"/><path d="m165 185 200 155 200-155" fill="none" stroke="#a78bfa" stroke-width="10"/><path d="M215 390h220M215 345h150" stroke="#9bb8d8" stroke-opacity=".5" stroke-width="10" stroke-linecap="round"/><g fill="#102d4e" stroke="#a78bfa" stroke-width="3"><rect x="610" y="165" width="150" height="70" rx="18"/><rect x="610" y="270" width="150" height="70" rx="18"/><rect x="610" y="375" width="150" height="70" rx="18"/></g><path d="M580 200h30M580 305h30M580 410h30" stroke="#35d2ff" stroke-width="7"/>
+ <g fill="#35d2ff" opacity=".65"><circle cx="100" cy="120" r="3"/><circle cx="790" cy="105" r="4"/><circle cx="820" cy="420" r="3"/><circle cx="95" cy="470" r="3"/></g>
+ <rect x="12" y="12" width="876" height="576" rx="22" fill="none" stroke="#b4d5ff" stroke-opacity=".13" stroke-width="2"/>
+ </svg>
