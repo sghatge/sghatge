@@ -20,10 +20,10 @@ h1,h2,h3 { letter-spacing:-.035em; }
 .card p { color:#d2deee; line-height:1.55; }
 .tag { display:inline-block; padding:.2rem .55rem; border-radius:999px; background:#173b52; color:#83e1f5; font-size:.72rem; font-weight:700; margin-bottom:.6rem; }
 .small { color:#9eafc7; font-size:.84rem; }
-.project-visual { overflow:hidden; border-radius:18px; margin-bottom:.8rem; background:#071326; border:1px solid #31516f; box-shadow:0 16px 40px rgba(0,0,0,.38); }
-.project-visual img { width:100%; aspect-ratio:3/2; object-fit:cover; display:block; transition:transform .35s ease, filter .35s ease; filter:saturate(1.12) contrast(1.04); }
-.project-visual:hover img { transform:scale(1.035); filter:saturate(1.35) contrast(1.08); }
-.concept-card { border:1px solid #31516f; border-radius:18px; padding:1rem; background:linear-gradient(145deg,rgba(22,43,70,.98),rgba(8,17,31,.98)); min-height:100%; box-shadow:0 12px 30px rgba(0,0,0,.2); }
+.project-visual { overflow:hidden; border-radius:12px; margin:0 auto .55rem; max-width:340px; background:#071326; border:1px solid #294765; box-shadow:0 8px 20px rgba(0,0,0,.24); }
+.project-visual img { width:100%; height:112px; object-fit:cover; display:block; transition:transform .25s ease; }
+.project-visual:hover img { transform:scale(1.02); }
+.concept-card { border:1px solid #31516f; border-radius:16px; padding:.85rem; background:linear-gradient(145deg,rgba(22,43,70,.98),rgba(8,17,31,.98)); min-height:100%; box-shadow:0 9px 22px rgba(0,0,0,.18); }
 .concept-title { color:#ffffff; font-size:1.22rem; font-weight:850; margin:.35rem 0 .65rem; letter-spacing:-.02em; }
 .concept-copy { color:#d0dced; font-size:.96rem; line-height:1.6; }
 .concept-hook { color:#83e8ff; font-weight:800; font-size:1rem; line-height:1.45; margin:.85rem 0 .2rem; }
@@ -43,26 +43,12 @@ div[data-testid="stSelectbox"] label, div[data-testid="stTextInput"] label { col
 """, unsafe_allow_html=True)
 
 
-IMAGE_URLS = {
-    # Curated cinematic photography/AI artwork selected for the portfolio.
-    "agent-governance.svg": "https://www.techbuzz.ai/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cquality%3D80%2Cformat%3Dauto%2Cfit%3Dcover/https%3A/charming-card-d91ad3487b.media.strapiapp.com/file_6b64f1c0ac.png",
-    "deterministic-crm-qa.svg": "https://images.ai2.work/heroes/how-agentic-ai-is-reinventing-enterprise-productivity-suites.webp",
-    "preflight-agent.svg": "https://mubbits.com/services/covers/cloud.png",
-    "ajo-journey-time-machine.svg": "https://danielpopp.eu/wp-content/uploads/2025/06/dp-16652.jpg",
-    "prompt-to-journey.svg": "https://elautonomo.digital/assets/leads_premium.png",
-    "campaign-intelligence.svg": "https://danielpopp.eu/wp-content/uploads/2025/06/dp-16652.jpg",
-    "self-optimizing-test-loop.svg": "https://durranitech.com/images/blogs/n8n_automation.png",
-    "four-agents-one-campaign.svg": "https://www.pandascodingschool.com/assets/production-ai-agent-architecture.png",
-    "ai-readable-email.svg": "https://images.ai2.work/heroes/how-agentic-ai-is-reinventing-enterprise-productivity-suites.webp",
-    "opsforge-architecture.svg": "https://durranitech.com/images/blogs/n8n_automation.png",
-    "adobe-campaign-v8-governance.svg": "https://img.deepseek.day/aiweb/deepseek-blog-fig-01-20260702.jpg",
-    "ai-readiness-calculator.svg": "https://mubbits.com/services/covers/cloud.png",
-}
-
 def image_html(filename, alt="OPSFORGE AI concept artwork"):
-    """Render a curated, high-resolution visual for each portfolio concept."""
-    image_url = IMAGE_URLS.get(filename, IMAGE_URLS["opsforge-architecture.svg"])
-    return f'<div class="project-visual"><img src="{image_url}" alt="{alt}" loading="lazy"></div>'
+    """Use a distinct repository-owned illustration for each concept."""
+    asset_path = Path(__file__).parent / "assets" / filename
+    svg = asset_path.read_text(encoding="utf-8")
+    encoded = base64.b64encode(svg.encode("utf-8")).decode("ascii")
+    return f'<div class="project-visual"><img src="data:image/svg+xml;base64,{encoded}" alt="{alt}" loading="lazy"></div>'
 
 PROJECTS = [
  {"name":"OPSFORGE","image":"opsforge-architecture.svg","family":"Governance","stage":"Live platform","problem":"AI agents need bounded tools, human approval and an auditable run history.","proof":"Six registered agents, approval workflow, override reasons and audit trail.","repo":"https://github.com/sghatge/opsforge","demo":"https://sghatge.github.io/opsforge/","punch":"Autonomy without accountability is just automation with a bigger blast radius."},
