@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="Salesforce CRM lifecycle intelligence">
+<defs>
+ <linearGradient id="b" x2="1" y2="1"><stop stop-color="#07162d"/><stop offset="1" stop-color="#102d4b"/></linearGradient>
+ <linearGradient id="c"><stop stop-color="#00c7ff"/><stop offset="1" stop-color="#7a5cff"/></linearGradient>
+ <filter id="g"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<rect width="900" height="600" rx="28" fill="url(#b)"/>
+<g opacity=".18" stroke="#75cfff"><path d="M0 100H900M0 200H900M0 300H900M0 400H900M0 500H900M100 0V600M200 0V600M300 0V600M400 0V600M500 0V600M600 0V600M700 0V600M800 0V600"/></g>
+<circle cx="450" cy="295" r="148" fill="#00bfff" opacity=".16" filter="url(#g)"/>
+<g fill="none" stroke-width="7" stroke-linecap="round">
+ <path d="M450 130 C620 130 735 245 735 300 C735 420 610 480 450 480 C290 480 165 420 165 300 C165 180 290 130 450 130Z" stroke="url(#c)"/>
+ <path d="M450 190 C570 190 650 245 650 300 C650 355 570 410 450 410 C330 410 250 355 250 300 C250 245 330 190 450 190Z" stroke="#35e5d0" opacity=".9"/>
+</g>
+<g stroke="#b8eaff" stroke-width="4" fill="#102b48">
+ <rect x="372" y="246" width="156" height="108" rx="18"/>
+ <path d="M400 280H500M400 310H480" stroke="#42d7ff" stroke-width="8" stroke-linecap="round"/>
+ <circle cx="450" cy="222" r="22" fill="#ffb84d" stroke="none"/>
+ <circle cx="260" cy="300" r="18" fill="#ffb84d" stroke="none"/>
+ <circle cx="640" cy="300" r="18" fill="#ffb84d" stroke="none"/>
+ <circle cx="450" cy="430" r="18" fill="#ffb84d" stroke="none"/>
+</g>
+<g fill="#dff7ff" font-family="Arial,sans-serif" font-weight="700" text-anchor="middle">
+ <text x="450" y="70" font-size="25" letter-spacing="5">CRM LIFECYCLE INTELLIGENCE</text>
+ <text x="450" y="540" font-size="19" opacity=".8" letter-spacing="3">IDENTITY · CONSENT · NEXT BEST ACTION</text>
+</g>
+</svg>
