@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-label="agent governance illustration">
+ <defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071326"/><stop offset=".55" stop-color="#101c38"/><stop offset="1" stop-color="#160f32"/></linearGradient>
+ <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1f9cff"/><stop offset="1" stop-color="#8a5cff"/></linearGradient>
+ <radialGradient id="orb"><stop stop-color="#1f9cff" stop-opacity=".38"/><stop offset="1" stop-color="#1f9cff" stop-opacity="0"/></radialGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+ <filter id="shadow"><feGaussianBlur stdDeviation="5"/></filter>
+ <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#8cb7ef" stroke-opacity=".09" stroke-width="1"/></pattern>
+ </defs>
+ <rect width="900" height="600" rx="28" fill="url(#bg)"/><rect width="900" height="600" rx="28" fill="url(#grid)"/>
+ <circle cx="150" cy="80" r="180" fill="url(#orb)" opacity=".6"/><circle cx="760" cy="530" r="180" fill="url(#orb)" opacity=".4"/>
+ <path d="M0 520 Q220 455 430 520T900 500" fill="none" stroke="#1f9cff" stroke-opacity=".18" stroke-width="2"/>
+ <circle cx="450" cy="285" r="210" fill="url(#orb)"/><path d="M450 105 610 170v125c0 104-67 170-160 214-93-44-160-110-160-214V170z" fill="#0d2546" stroke="url(#glow)" stroke-width="5"/><path d="M450 155 565 202v91c0 76-47 127-115 164-68-37-115-88-115-164v-91z" fill="#112f54" stroke="#1f9cff" stroke-opacity=".65" stroke-width="2"/><path d="m385 290 47 47 91-105" fill="none" stroke="#8a5cff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/><circle cx="450" cy="285" r="235" fill="none" stroke="#1f9cff" stroke-opacity=".35" stroke-dasharray="7 15" stroke-width="2"/>
+ <g fill="#1f9cff" opacity=".65"><circle cx="100" cy="120" r="3"/><circle cx="790" cy="105" r="4"/><circle cx="820" cy="420" r="3"/><circle cx="95" cy="470" r="3"/></g>
+ <rect x="12" y="12" width="876" height="576" rx="22" fill="none" stroke="#b4d5ff" stroke-opacity=".13" stroke-width="2"/>
+ </svg>
