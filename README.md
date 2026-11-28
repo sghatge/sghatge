@@ -5,12 +5,12 @@
 **ENTERPRISE MARTECH · AI TRANSFORMATION · AGENTIC AI · CRM OPERATIONS · AI GOVERNANCE**
 
 [![GitHub](https://img.shields.io/badge/GitHub-sghatge-181717?logo=github)](https://github.com/sghatge)
-[![Governance OS](https://img.shields.io/badge/Live-Governance%20OS-2563eb)](https://sghatge.github.io/adobe-campaign-v8-governance/)
+[![Governance OS](https://img.shields.io/badge/Live-Governance%20OS-2563eb)](https://github.com/sghatge/sghatge)
 [![Digital Marketing AI Agents](https://img.shields.io/badge/Live-Digital%20Marketing%20AI%20Agents-0f766e)](https://sghatge-digital-marketing-ai-agents-app-5uhltb.streamlit.app/)
 
 **Designing governed, evidence-first systems for enterprise customer and marketing operations.**
 
-[Explore live demos](https://sghatge.github.io/adobe-campaign-v8-governance/) · [Browse repositories](https://github.com/sghatge?tab=repositories) · [Project showcase](https://sghatge.github.io/adobe-campaign-v8-governance/projects.html)
+[Explore live demos](https://sghatge.github.io/adobe-campaign-v8-governance/) · [Browse repositories](https://github.com/sghatge?tab=repositories) · [Project showcase](https://github.com/sghatge/sghatge#featured-projects)
 
 </div>
 
