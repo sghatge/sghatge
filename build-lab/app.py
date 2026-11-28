@@ -315,4 +315,4 @@ navigation.run()
 
 st.divider()
 st.markdown("**OPSFORGE AI BUILD LAB** · Independent prototypes. Synthetic-data-first demonstrations. Evidence before claims.")
-st.markdown("[GitHub profile](https://github.com/sghatge) · [Portfolio](https://sghatge.github.io/adobe-campaign-v8-governance/) · [OPSFORGE](https://github.com/sghatge/opsforge)")
+st.markdown("[GitHub profile](https://github.com/sghatge) · [Portfolio](https://github.com/sghatge/sghatge) · [OPSFORGE](https://github.com/sghatge/opsforge)")
