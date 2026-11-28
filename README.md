@@ -32,6 +32,17 @@ My focus is on turning complex operating processes into measurable, testable and
 
 ## Featured Projects
 
+### Visual Project Gallery
+
+<p align="center">
+  <a href="https://github.com/sghatge/adobe-campaign-v8-governance"><img src="assets/portfolio/governance.svg" width="48%" alt="Governance OS visual: deterministic campaign QA, evidence and human review"></a>
+  <a href="https://github.com/sghatge/acc-agent-gate"><img src="assets/portfolio/agent-gate.svg" width="48%" alt="ACC Agent Gate visual: policy checkpoint between AI agents and campaign actions"></a>
+</p>
+<p align="center">
+  <a href="https://github.com/sghatge/opsforge"><img src="assets/portfolio/opsforge.svg" width="48%" alt="OPSFORGE visual: research signals converted into governed execution"></a>
+  <a href="https://github.com/sghatge/customer-360-intelligence"><img src="assets/portfolio/customer360.svg" width="48%" alt="Customer 360 visual: identity, consent, audience and journey intelligence"></a>
+</p>
+
 <table>
 <tr>
 <td width="50%" valign="top">
