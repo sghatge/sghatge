@@ -361,3 +361,10 @@ The series prioritises real demonstrations, evidence-backed claims, synthetic or
 - [CampaignPulse AI playbook](https://github.com/sghatge/campaignpulse-ai/blob/main/modlethub/CAMPAIGNPULSE_AI_PLAYBOOK.md)
 
 The app is designed for fictional or sanitized aggregate metrics only. No Adobe Campaign instance is accessed or modified.
+
+
+## Interactive Module Demo Studio
+
+The [OPSFORGE Build Lab](https://sghatge.streamlit.app/) now includes a dedicated interactive demo workspace for all 14 core modules: OPSFORGE Control Plane, Signal → Execution, Resilience Command Centre, ACC Agent Gate, AJO Journey Time Machine, CampaignPulse AI, AI Readiness Calculator, Email 2030 Showcase, Adobe Campaign v8 Governance, Customer 360 Intelligence, Digital Marketing AI Agents, Campaign v8 Pre-flight Agent, AJO Journey Orchestration Lab and Salesforce CRM AI Lab.
+
+All module demos use synthetic data and do not connect to production systems or execute external actions.
