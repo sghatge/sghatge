@@ -252,6 +252,37 @@ Hardened agent-to-campaign governance with request timeouts, HTTP security tests
 [Repository](https://github.com/sghatge/acc-agent-gate)
 
 
+## Recent Builds — November 2026
+
+A current snapshot of independent product and engineering work. These projects are at different maturity levels; preview status is stated explicitly.
+
+### PuneStack — India-wide AI services marketplace
+
+A standalone marketplace concept connecting businesses with AI automation providers across India. The repository includes buyer and provider portals, verified-provider discovery, three-way comparison, provider evidence review and an admin verification console.
+
+- [GitHub repository](https://github.com/sghatge/punestack)
+- [Marketplace preview](https://punestack.vercel.app/)
+- [Buyer portal](https://punestack.vercel.app/auth.html?mode=buyer)
+- [Provider portal](https://punestack.vercel.app/auth.html?mode=provider)
+- [Launch gates and zero-cost readiness plan](https://github.com/sghatge/punestack/blob/main/docs/ZERO_COST_READINESS.md)
+
+**Current status:** zero-cost pre-launch preview. Supabase production and staging are intentionally paused. Buyer submissions, payments and lead allocation are not active. Do not represent this as a live transactional marketplace.
+
+### Local-first productivity tools
+
+A small suite of focused tools designed to keep user work on-device and avoid unnecessary account or upload requirements.
+
+- [MinuteBox](https://minutebox.vercel.app/) — meeting minutes and action items.
+- [FieldNotes tool suite](https://fieldnotes-henna.vercel.app/app/) — VoiceTask, ExpenseLens, CallRecap, FieldAudit and PaperBrief.
+- [MinuteBox repository](https://github.com/sghatge/minutebox) · [FieldNotes repository](https://github.com/sghatge/fieldnotes)
+
+These tools are separate from PuneStack's marketplace backend.
+
+### Portfolio / Build Lab
+
+- [OPSFORGE AI Build Lab](https://sghatge.streamlit.app/) — searchable portfolio, interactive module demos, research radar, evaluation workspace and LinkedIn studio.
+- [Portfolio source repository](https://github.com/sghatge/sghatge)
+
 ## More Projects
 
 | Project | What it explores | Links |
