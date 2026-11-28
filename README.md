@@ -32,16 +32,142 @@ My focus is on turning complex operating processes into measurable, testable and
 
 ## Featured Projects
 
-### Visual Project Gallery
+### Visual Project Gallery — OPSFORGE Build Lab Modules
 
-<p align="center">
-  <a href="https://github.com/sghatge/adobe-campaign-v8-governance"><img src="assets/portfolio/governance.svg" width="48%" alt="Governance OS visual: deterministic campaign QA, evidence and human review"></a>
-  <a href="https://github.com/sghatge/acc-agent-gate"><img src="assets/portfolio/agent-gate.svg" width="48%" alt="ACC Agent Gate visual: policy checkpoint between AI agents and campaign actions"></a>
-</p>
-<p align="center">
-  <a href="https://github.com/sghatge/opsforge"><img src="assets/portfolio/opsforge.svg" width="48%" alt="OPSFORGE visual: research signals converted into governed execution"></a>
-  <a href="https://github.com/sghatge/customer-360-intelligence"><img src="assets/portfolio/customer360.svg" width="48%" alt="Customer 360 visual: identity, consent, audience and journey intelligence"></a>
-</p>
+All featured modules use a consistent original SVG visual style. Each image links directly to its project repository or demo.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/opsforge"><img src="build-lab/assets/opsforge-architecture.svg" width="100%" alt="OPSFORGE architecture"></a>
+
+**OPSFORGE** — governed AI operating model, approvals and audit ledger.
+
+</td>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/opsforge"><img src="build-lab/assets/opsforge-architecture.svg" width="100%" alt="Signal to Execution pipeline"></a>
+
+**Signal → Execution** — research intake, relevance scoring and controlled decisions.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/opsforge/tree/main/products/resilience-command-centre"><img src="build-lab/assets/opsforge-architecture.svg" width="100%" alt="Resilience Command Centre"></a>
+
+**Resilience Command Centre** — structured resilience assessment and response.
+
+</td>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/acc-agent-gate"><img src="build-lab/assets/agent-governance.svg" width="100%" alt="ACC Agent Gate"></a>
+
+**ACC Agent Gate** — policy checkpoint, human approval and auditable execution.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/ajo-journey-time-machine"><img src="build-lab/assets/ajo-journey-time-machine.svg" width="100%" alt="AJO Journey Time Machine"></a>
+
+**AJO Journey Time Machine** — replay journeys, test consent and inspect risk.
+
+</td>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/campaignpulse-ai"><img src="build-lab/assets/campaign-intelligence.svg" width="100%" alt="CampaignPulse AI"></a>
+
+**CampaignPulse AI** — campaign KPIs, diagnostics and evidence-led recommendations.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/ai-readiness-calculator"><img src="build-lab/assets/ai-readiness-calculator.svg" width="100%" alt="AI Readiness Calculator"></a>
+
+**AI Readiness Calculator** — capability assessment and transformation roadmap.
+
+</td>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/email-2030-showcase"><img src="build-lab/assets/ai-readable-email.svg" width="100%" alt="Email 2030 Showcase"></a>
+
+**Email 2030 Showcase** — AI-readable email, agent governance and testing concepts.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/adobe-campaign-v8-governance"><img src="build-lab/assets/adobe-campaign-v8-governance.svg" width="100%" alt="Adobe Campaign v8 Governance"></a>
+
+**Adobe Campaign v8 Governance** — campaign QA, operational controls and evidence.
+
+</td>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/customer-360-intelligence"><img src="build-lab/assets/deterministic-crm-qa.svg" width="100%" alt="Customer 360 Intelligence"></a>
+
+**Customer 360 Intelligence** — identity, consent, audiences and activation.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/digital-marketing-ai-agents"><img src="build-lab/assets/four-agents-one-campaign.svg" width="100%" alt="Digital Marketing AI Agents"></a>
+
+**Digital Marketing AI Agents** — strategy, content, campaign QA and analytics agents.
+
+</td>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/campaign-v8-preflight-agent"><img src="build-lab/assets/preflight-agent.svg" width="100%" alt="Campaign v8 Pre-flight Agent"></a>
+
+**Campaign v8 Pre-flight Agent** — deterministic release-readiness checks.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/ajo-journey-orchestration-lab"><img src="build-lab/assets/prompt-to-journey.svg" width="100%" alt="AJO Journey Orchestration Lab"></a>
+
+**AJO Journey Orchestration Lab** — journey design and orchestration patterns.
+
+</td>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/salesforce-crm-ai-lab"><img src="build-lab/assets/salesforce-crm-lifecycle.svg" width="100%" alt="Salesforce CRM AI Lab"></a>
+
+**Salesforce CRM AI Lab** — CRM lifecycle intelligence and decision support.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/email-2030-showcase/tree/main/05-test-loop"><img src="build-lab/assets/self-optimizing-test-loop.svg" width="100%" alt="Self Optimizing Test Loop"></a>
+
+**Self-Optimizing Test Loop** — experiment, measure and improve through evidence.
+
+</td>
+<td width="50%" valign="top">
+
+<a href="https://github.com/sghatge/email-2030-showcase/tree/main/01-prompt-to-journey"><img src="build-lab/assets/prompt-to-journey.svg" width="100%" alt="Prompt to Journey"></a>
+
+**Prompt to Journey** — transform briefs into reviewable journey blueprints.
+
+</td>
+</tr>
+</table>
+
+
 
 <table>
 <tr>
