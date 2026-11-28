@@ -63,7 +63,7 @@ All featured modules use a consistent original SVG visual style. Each image link
 </td>
 <td width="50%" valign="top">
 
-<a href="https://github.com/sghatge/acc-agent-gate"><img src="build-lab/assets/agent-governance.svg" width="100%" alt="ACC Agent Gate"></a>
+<a href="https://github.com/sghatge/acc-agent-gate"><img src="build-lab/assets/acc-agent-gate.svg" width="100%" alt="ACC Agent Gate"></a>
 
 **ACC Agent Gate** — policy checkpoint, human approval and auditable execution.
 
