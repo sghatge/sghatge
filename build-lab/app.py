@@ -300,7 +300,79 @@ What would you test before trusting this in a real enterprise workflow?
     st.caption("Edit the draft to reflect what you personally tested. Research connections are explicitly mapped per project; no keyword-based matching is used.")
 
 
+
+def render_module_demos():
+    """Fourteen synthetic-data-first interactive module demonstrations."""
+    import pandas as pd
+    from datetime import datetime
+    st.markdown("## Interactive Module Demo Studio")
+    st.caption("14 hands-on module demos · synthetic inputs · no production credentials · no external actions")
+    modules = ["OPSFORGE Control Plane","Signal → Execution","Resilience Command Centre","ACC Agent Gate","AJO Journey Time Machine","CampaignPulse AI","AI Readiness Calculator","Email 2030 Showcase","Adobe Campaign v8 Governance","Customer 360 Intelligence","Digital Marketing AI Agents","Campaign v8 Pre-flight Agent","AJO Journey Orchestration Lab","Salesforce CRM AI Lab"]
+    choice = st.selectbox("Choose a module", modules, key="module_demo_choice")
+    st.divider()
+    if choice == modules[0]:
+        risk=st.selectbox("Risk tier",["Low","Moderate","High","Critical"]); action=st.selectbox("Action",["Read-only","Internal draft","Internal update","External customer action"]); sensitive=st.checkbox("Sensitive data involved"); approver=st.checkbox("Named approver available",True)
+        if st.button("Evaluate policy gate",key="demo_ops"):
+            block=risk=="Critical" or (sensitive and action=="External customer action"); hold=block or risk=="High" or action=="External customer action" or not approver
+            (st.error if block else st.warning if hold else st.success)("BLOCK" if block else "HOLD FOR APPROVAL" if hold else "ALLOW WITH LOGGING")
+            st.json({"risk":risk,"action":action,"sensitive":sensitive,"approver":approver,"evidence_id":"DEMO-"+datetime.utcnow().strftime("%Y%m%d%H%M%S")})
+    elif choice == modules[1]:
+        signal=st.text_area("Incoming signal","Campaign workflow failure after a platform change"); relevance=st.slider("Relevance",0,100,80); confidence=st.slider("Evidence confidence",0,100,75); impact=st.selectbox("Impact",["Low","Medium","High","Critical"])
+        if st.button("Score and route",key="demo_signal"):
+            score=round(.45*relevance+.35*confidence+.2*{"Low":20,"Medium":45,"High":75,"Critical":100}[impact]); st.metric("Priority score",f"{score}/100"); st.write("Route:","Incident owner" if impact in ["High","Critical"] else "Operations analyst"); st.info("Human review required" if score>=55 else "Queue for later review"); st.write(signal)
+    elif choice == modules[2]:
+        service=st.selectbox("Service",["Campaign deployment","Identity service","Journey orchestration","Reporting pipeline"]); scenario=st.selectbox("Scenario",["Region outage","Credential compromise","Data delay","Third-party outage"]); rto=st.number_input("RTO hours",1,168,4); rpo=st.number_input("RPO hours",0,72,1); tested=st.checkbox("Recovery plan tested in last 90 days")
+        if st.button("Assess resilience",key="demo_resilience"):
+            score=max(0,100-rto*2-rpo*3+(15 if tested else 0)); st.metric("Illustrative readiness",f"{score}/100"); st.write({"service":service,"scenario":scenario,"RTO":rto,"RPO":rpo}); (st.success if tested else st.warning)("Recovery evidence recorded" if tested else "Recovery test gap")
+    elif choice == modules[3]:
+        campaign=st.text_input("Campaign","Spring retention"); audience=st.number_input("Audience",0,10000000,25000); consent=st.selectbox("Consent",["Passed","Not run","Failed"]); qa=st.selectbox("QA",["Passed","Warnings","Failed"]); approval=st.selectbox("Approval",["Approved","Pending","Rejected"])
+        if st.button("Evaluate ACC gate",key="demo_acc"):
+            block=consent=="Failed" or qa=="Failed" or approval=="Rejected"; hold=not block and (consent!="Passed" or qa!="Passed" or approval!="Approved" or audience==0); verdict="BLOCK" if block else "HOLD" if hold else "READY FOR HUMAN RELEASE"; (st.error if block else st.warning if hold else st.success)(verdict); st.write({"campaign":campaign,"audience":audience,"verdict":verdict}); st.caption("No send or schedule is executed.")
+    elif choice == modules[4]:
+        events=st.multiselect("Journey events",["Profile created","Consent granted","Email delivered","Email clicked","Purchase","Consent withdrawn"],["Profile created","Consent granted","Email delivered"]); consent=st.selectbox("Current consent",["Granted","Unknown","Withdrawn"])
+        if st.button("Replay journey",key="demo_ajo_time"):
+            blocked=consent!="Granted" or "Consent withdrawn" in events; st.dataframe(pd.DataFrame([{"Step":i+1,"Event":e,"Result":"PAUSED" if blocked and e=="Email delivered" else "SIMULATED"} for i,e in enumerate(events)]),hide_index=True); (st.warning if blocked else st.success)("Paused at consent gate" if blocked else "Synthetic replay complete")
+    elif choice == modules[5]:
+        sent=st.number_input("Sent",0,100000000,100000); delivered=st.number_input("Delivered",0,100000000,97500); opens=st.number_input("Unique opens",0,100000000,32000); clicks=st.number_input("Unique clicks",0,100000000,4200); bounce=st.number_input("Bounces",0,100000000,2500)
+        if st.button("Analyse KPIs",key="demo_pulse"):
+            if delivered>sent or opens>delivered or clicks>delivered or bounce>sent: st.error("Counts inconsistent; validate source data.")
+            else:
+                cols=st.columns(4)
+                for col,label,value in zip(cols,["Delivery","Open","Click","Bounce"],[delivered/sent if sent else 0,opens/delivered if delivered else 0,clicks/delivered if delivered else 0,bounce/sent if sent else 0]): col.metric(label,f"{value:.2%}")
+                st.bar_chart(pd.DataFrame({"Count":{"Delivered":delivered,"Opens":opens,"Clicks":clicks,"Bounces":bounce}}))
+    elif choice == modules[6]:
+        dims=["Strategy","Data","Technology","Governance","People","Operating model"]; scores={d:st.slider(d,1,5,3,key="read_"+d) for d in dims}; total=round(sum(scores.values())/(5*len(dims))*100); st.metric("Readiness indicator",f"{total}/100"); st.progress(total/100); st.dataframe(pd.DataFrame([{"Capability":k,"Score":v,"Priority":"Focus" if v<=2 else "Develop" if v==3 else "Sustain"} for k,v in scores.items()]),hide_index=True); st.caption("Self-assessment only; not a certification.")
+    elif choice == modules[7]:
+        subject=st.text_input("Subject","Your account update"); pre=st.text_input("Preheader","A clear summary"); body=st.text_area("Email body","Hello {{first_name}}, your update is ready."); checks={"Subject":bool(subject.strip()),"Preheader":bool(pre.strip()),"Personalisation token":"{{first_name}}" in body,"Alt text":st.checkbox("Images have alt text",True),"Preference link":st.checkbox("Preference link included",True),"Semantic structure":st.checkbox("Semantic headings and descriptive links",True)}; st.metric("Structure checks passed",f"{sum(checks.values())}/{len(checks)}"); st.dataframe(pd.DataFrame([{"Check":k,"Status":"PASS" if v else "REVIEW"} for k,v in checks.items()]),hide_index=True)
+    elif choice == modules[8]:
+        controls=["Workflow naming","Target mapping","Exclusion logic","Proofing","SPF/DKIM/DMARC alignment","Consent and suppression","Schedule and time zone","Rollback owner"]; results={x:st.selectbox(x,["Not checked","Pass","Review","Fail"],key="adobe_"+x) for x in controls}
+        if st.button("Generate governance verdict",key="demo_adobe"):
+            fails=sum(v=="Fail" for v in results.values()); gaps=sum(v!="Pass" for v in results.values()); (st.error if fails else st.warning if gaps else st.success)(f"{'BLOCK' if fails else 'HOLD' if gaps else 'READY FOR APPROVAL'} · {fails} failed · {gaps} not passed"); st.dataframe(pd.DataFrame([{"Control":k,"Result":v} for k,v in results.items()]),hide_index=True)
+    elif choice == modules[9]:
+        df=st.data_editor(pd.DataFrame([{"Record":"A-1001","Email":"alex@example.test","Consent":"Granted"},{"Record":"B-2004","Email":"alex@example.test","Consent":"Unknown"},{"Record":"C-3008","Email":"casey@example.test","Consent":"Withdrawn"}]),num_rows="dynamic",key="demo_c360")
+        if st.button("Resolve synthetic identities",key="demo_c360_run"):
+            norm=df.Email.fillna("").str.strip().str.lower(); dup=int((norm[norm!=""].value_counts()-1).clip(lower=0).sum()); st.metric("Potential duplicate records",dup); st.warning("Identity match does not imply activation permission. Exclude unknown and withdrawn consent.")
+    elif choice == modules[10]:
+        brief=st.text_area("Campaign brief","Increase repeat purchase among opted-in customers"); channels=st.multiselect("Channels",["Email","Push","SMS","In-app"],["Email","Push"])
+        if st.button("Run specialist workflow",key="demo_agents"):
+            st.dataframe(pd.DataFrame([{"Agent":a,"Output":b,"State":"SIMULATED · REVIEW REQUIRED"} for a,b in [("Strategy","Audience, objective and hypothesis"),("Content","Channel message variants"),("QA","Consent, links, exclusions and rendering"),("Analytics","Measurement and holdout plan")]]),hide_index=True); st.write({"brief":brief,"channels":channels}); st.warning("Human review required. Nothing is sent or published.")
+    elif choice == modules[11]:
+        checks=["Audience reconciled","Consent and suppression","Seed-list proof","Links and tracking","Dynamic content","Deliverability configuration","Schedule and time zone","Rollback owner"]; vals={x:st.checkbox(x,key="pre_"+x) for x in checks}
+        if st.button("Run pre-flight",key="demo_preflight"):
+            missing=[x for x,v in vals.items() if not v]; status="BLOCK" if len(missing)>=3 else "HOLD" if missing else "READY FOR APPROVAL"; (st.error if status=="BLOCK" else st.warning if status=="HOLD" else st.success)(f"{status} · {len(missing)} incomplete"); st.download_button("Download evidence CSV",pd.DataFrame([{"Control":k,"Passed":v} for k,v in vals.items()]).to_csv(index=False),"preflight-evidence.csv","text/csv")
+    elif choice == modules[12]:
+        entry=st.selectbox("Entry event",["Profile created","Purchase completed","Cart abandoned","Subscription renewed"]); branch=st.selectbox("Decision",["Consent granted?","Purchased in last 30 days?","VIP segment?","Channel available?"]); yes=st.selectbox("YES path",["Send onboarding","Wait and evaluate","Create service task","Exit journey"]); no=st.selectbox("NO path",["Exit journey","Wait for consent","Suppress"]); delay=st.number_input("Wait hours",0,720,24)
+        if st.button("Build journey blueprint",key="demo_orch"):
+            st.graphviz_chart(f'digraph G {{rankdir=LR; A[label="{entry}"]; B[shape=diamond,label="{branch}"]; C[label="{yes}"]; D[label="{no}"]; E[label="Wait {delay}h"]; A->B; B->C[label="YES"]; B->D[label="NO"]; C->E;}}'); st.success("Blueprint generated. Review consent, frequency caps and exit criteria.")
+    elif choice == modules[13]:
+        scenario=st.selectbox("Lead scenario",["Demo request","Content download","Returning visitor","Partner referral"]); fit=st.slider("Profile fit",0,100,72); engagement=st.slider("Engagement",0,100,64); consent=st.selectbox("Marketing consent",["Granted","Unknown","Withdrawn"]); score=round(.55*fit+.45*engagement); stage="MQL" if score>=70 else "Nurture" if score>=45 else "Early stage"; action="Sales follow-up" if score>=70 and consent=="Granted" else "Consent remediation" if consent!="Granted" else "Nurture"; a,b,c=st.columns(3); a.metric("Lead score",score); b.metric("Lifecycle",stage); c.metric("Next action",action); st.caption(f"{scenario} · synthetic scenario only. No Salesforce org is connected.")
+    st.divider()
+    st.caption("OPSFORGE Build Lab · Synthetic demonstration · No production integrations or external side effects.")
+
+
+
 PAGES = [
+    st.Page(render_module_demos, title="Interactive Module Demos", icon="🧪"),
     st.Page(render_portfolio, title="Build portfolio", icon="🚀", default=True),
     st.Page(render_concepts, title="Concept gallery", icon="✨"),
     st.Page(render_research, title="Research radar", icon="🧠"),
