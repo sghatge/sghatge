@@ -47,7 +47,7 @@ All featured modules use a consistent original SVG visual style. Each image link
 </td>
 <td width="50%" valign="top">
 
-<a href="https://github.com/sghatge/opsforge"><img src="build-lab/assets/opsforge-architecture.svg" width="100%" alt="Signal to Execution pipeline"></a>
+<a href="https://github.com/sghatge/opsforge"><img src="build-lab/assets/signal-to-execution.svg" width="100%" alt="Signal to Execution pipeline"></a>
 
 **Signal → Execution** — research intake, relevance scoring and controlled decisions.
 
@@ -56,7 +56,7 @@ All featured modules use a consistent original SVG visual style. Each image link
 <tr>
 <td width="50%" valign="top">
 
-<a href="https://github.com/sghatge/opsforge/tree/main/products/resilience-command-centre"><img src="build-lab/assets/opsforge-architecture.svg" width="100%" alt="Resilience Command Centre"></a>
+<a href="https://github.com/sghatge/opsforge/tree/main/products/resilience-command-centre"><img src="build-lab/assets/resilience-command-centre.svg" width="100%" alt="Resilience Command Centre"></a>
 
 **Resilience Command Centre** — structured resilience assessment and response.
 
@@ -159,7 +159,7 @@ All featured modules use a consistent original SVG visual style. Each image link
 </td>
 <td width="50%" valign="top">
 
-<a href="https://github.com/sghatge/email-2030-showcase/tree/main/01-prompt-to-journey"><img src="build-lab/assets/prompt-to-journey.svg" width="100%" alt="Prompt to Journey"></a>
+<a href="https://github.com/sghatge/email-2030-showcase/tree/main/01-prompt-to-journey"><img src="build-lab/assets/prompt-to-journey-module.svg" width="100%" alt="Prompt to Journey"></a>
 
 **Prompt to Journey** — transform briefs into reviewable journey blueprints.
 
