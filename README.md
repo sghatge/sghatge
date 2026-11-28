@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/portfolio/hero.svg" width="100%" alt="Sangram Ghatge — Enterprise MarTech, Agentic AI and CRM Operations">
+<img src="assets/portfolio/hero.svg" width="520" alt="Sangram Ghatge — Enterprise MarTech, Agentic AI and CRM Operations">
 
 **ENTERPRISE MARTECH · AI TRANSFORMATION · AGENTIC AI · CRM OPERATIONS · AI GOVERNANCE**
 
